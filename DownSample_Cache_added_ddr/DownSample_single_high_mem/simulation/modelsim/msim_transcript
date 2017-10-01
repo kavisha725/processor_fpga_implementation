@@ -1,0 +1,161 @@
+# Reading C:/altera/13.0/modelsim_ase/tcl/vsim/pref.tcl 
+# do processor_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\13.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\13.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+G:/UOM\ Semester\ 5/circuits\ \ and\ systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem {G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/uart.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module uart
+# 
+# Top level modules:
+# 	uart
+# vlog -vlog01compat -work work +incdir+G:/UOM\ Semester\ 5/circuits\ \ and\ systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem {G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/transmitter.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module transmitter
+# 
+# Top level modules:
+# 	transmitter
+# vlog -vlog01compat -work work +incdir+G:/UOM\ Semester\ 5/circuits\ \ and\ systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem {G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/receiver.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module receiver
+# 
+# Top level modules:
+# 	receiver
+# vlog -vlog01compat -work work +incdir+G:/UOM\ Semester\ 5/circuits\ \ and\ systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem {G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/baud_rate_gen.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module baud_rate_gen
+# 
+# Top level modules:
+# 	baud_rate_gen
+# vlog -vlog01compat -work work +incdir+G:/UOM\ Semester\ 5/circuits\ \ and\ systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem {G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/UART_FSM.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module UART_FSM
+# 
+# Top level modules:
+# 	UART_FSM
+# vlog -vlog01compat -work work +incdir+G:/UOM\ Semester\ 5/circuits\ \ and\ systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem {G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/register8.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module registerIR
+# -- Compiling module registerPC
+# 
+# Top level modules:
+# 	registerIR
+# 	registerPC
+# vlog -vlog01compat -work work +incdir+G:/UOM\ Semester\ 5/circuits\ \ and\ systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem {G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/control_unit.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module control_unit
+# 
+# Top level modules:
+# 	control_unit
+# vlog -vlog01compat -work work +incdir+G:/UOM\ Semester\ 5/circuits\ \ and\ systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem {G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/register19.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module register19
+# -- Compiling module registerAC
+# 
+# Top level modules:
+# 	register19
+# 	registerAC
+# vlog -vlog01compat -work work +incdir+G:/UOM\ Semester\ 5/circuits\ \ and\ systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem {G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/register12.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module register12
+# 
+# Top level modules:
+# 	register12
+# vlog -vlog01compat -work work +incdir+G:/UOM\ Semester\ 5/circuits\ \ and\ systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem {G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/datapath.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module datapath
+# 
+# Top level modules:
+# 	datapath
+# vlog -vlog01compat -work work +incdir+G:/UOM\ Semester\ 5/circuits\ \ and\ systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem {G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/Bmux.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Bmux
+# 
+# Top level modules:
+# 	Bmux
+# vlog -vlog01compat -work work +incdir+G:/UOM\ Semester\ 5/circuits\ \ and\ systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem {G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/Amux.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Amux
+# 
+# Top level modules:
+# 	Amux
+# vlog -vlog01compat -work work +incdir+G:/UOM\ Semester\ 5/circuits\ \ and\ systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem {G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/ALU.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module ALU
+# 
+# Top level modules:
+# 	ALU
+# vlog -vlog01compat -work work +incdir+G:/UOM\ Semester\ 5/circuits\ \ and\ systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem {G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/processor.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module processor
+# 
+# Top level modules:
+# 	processor
+# vlog -vlog01compat -work work +incdir+G:/UOM\ Semester\ 5/circuits\ \ and\ systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem {G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/memory_unit.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module memory_unit
+# 
+# Top level modules:
+# 	memory_unit
+# vlog -vlog01compat -work work +incdir+G:/UOM\ Semester\ 5/circuits\ \ and\ systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem {G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/ins_ram.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module ins_ram
+# -- Compiling module ins_ram_tb
+# 
+# Top level modules:
+# 	ins_ram_tb
+# vlog -vlog01compat -work work +incdir+G:/UOM\ Semester\ 5/circuits\ \ and\ systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem {G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/top_mod.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module top_mod
+# 
+# Top level modules:
+# 	top_mod
+# vlog -vlog01compat -work work +incdir+G:/UOM\ Semester\ 5/circuits\ \ and\ systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem {G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/img_in_ddr.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module img_in_ddr
+# -- Compiling module img_in_ddr_tb
+# 
+# Top level modules:
+# 	img_in_ddr_tb
+# 
+vsim work.img_in_ddr_tb
+# vsim work.img_in_ddr_tb 
+# Loading work.img_in_ddr_tb
+# Loading work.img_in_ddr
+# ** Warning: (vsim-3017) G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/img_in_ddr.v(195): [TFMPC] - Too few port connections. Expected 20, found 19.
+# 
+#         Region: /img_in_ddr_tb/img_in_ddr_tb1
+# ** Warning: (vsim-3722) G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/img_in_ddr.v(195): [TFMPC] - Missing connection for port 're_flag'.
+# 
+add wave -position end  sim:/img_in_ddr_tb/data_a
+add wave -position end  sim:/img_in_ddr_tb/data_b
+add wave -position end  sim:/img_in_ddr_tb/addr_a
+add wave -position end  sim:/img_in_ddr_tb/addr_b
+add wave -position end  sim:/img_in_ddr_tb/we_a
+add wave -position end  sim:/img_in_ddr_tb/we_b
+add wave -position end  sim:/img_in_ddr_tb/re_a
+add wave -position end  sim:/img_in_ddr_tb/clk
+add wave -position end  sim:/img_in_ddr_tb/q_a
+add wave -position end  sim:/img_in_ddr_tb/q_b
+add wave -position end  sim:/img_in_ddr_tb/d_ready_we
+add wave -position end  sim:/img_in_ddr_tb/d_ready_re
+add wave -position end  sim:/img_in_ddr_tb/test
+add wave -position end  sim:/img_in_ddr_tb/delay_temp_re
+add wave -position end  sim:/img_in_ddr_tb/delay_temp_we
+add wave -position end  sim:/img_in_ddr_tb/prev_addr_a1
+add wave -position end  sim:/img_in_ddr_tb/prev_addr_a2
+add wave -position end  sim:/img_in_ddr_tb/we_flag
+add wave -position end  sim:/img_in_ddr_tb/re_flag
+add wave -position end  sim:/img_in_ddr_tb/addrs_change_flag_we
+run -all
+# ** Note: $finish    : G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/img_in_ddr.v(324)
+#    Time: 2610 ns  Iteration: 0  Instance: /img_in_ddr_tb
+# 1
+# Break in Module img_in_ddr_tb at G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/img_in_ddr.v line 324

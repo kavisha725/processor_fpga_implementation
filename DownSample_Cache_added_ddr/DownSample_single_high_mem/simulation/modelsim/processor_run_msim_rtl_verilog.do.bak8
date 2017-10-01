@@ -1,0 +1,26 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vlog -vlog01compat -work work +incdir+G:/UOM\ Semester\ 5/circuits\ \ and\ systems/DownSample_single_high_mem {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/uart.v}
+vlog -vlog01compat -work work +incdir+G:/UOM\ Semester\ 5/circuits\ \ and\ systems/DownSample_single_high_mem {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/transmitter.v}
+vlog -vlog01compat -work work +incdir+G:/UOM\ Semester\ 5/circuits\ \ and\ systems/DownSample_single_high_mem {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/receiver.v}
+vlog -vlog01compat -work work +incdir+G:/UOM\ Semester\ 5/circuits\ \ and\ systems/DownSample_single_high_mem {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/baud_rate_gen.v}
+vlog -vlog01compat -work work +incdir+G:/UOM\ Semester\ 5/circuits\ \ and\ systems/DownSample_single_high_mem {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/UART_FSM.v}
+vlog -vlog01compat -work work +incdir+G:/UOM\ Semester\ 5/circuits\ \ and\ systems/DownSample_single_high_mem {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/register8.v}
+vlog -vlog01compat -work work +incdir+G:/UOM\ Semester\ 5/circuits\ \ and\ systems/DownSample_single_high_mem {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/control_unit.v}
+vlog -vlog01compat -work work +incdir+G:/UOM\ Semester\ 5/circuits\ \ and\ systems/DownSample_single_high_mem {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/register19.v}
+vlog -vlog01compat -work work +incdir+G:/UOM\ Semester\ 5/circuits\ \ and\ systems/DownSample_single_high_mem {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/register12.v}
+vlog -vlog01compat -work work +incdir+G:/UOM\ Semester\ 5/circuits\ \ and\ systems/DownSample_single_high_mem {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/datapath.v}
+vlog -vlog01compat -work work +incdir+G:/UOM\ Semester\ 5/circuits\ \ and\ systems/DownSample_single_high_mem {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/Bmux.v}
+vlog -vlog01compat -work work +incdir+G:/UOM\ Semester\ 5/circuits\ \ and\ systems/DownSample_single_high_mem {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/Amux.v}
+vlog -vlog01compat -work work +incdir+G:/UOM\ Semester\ 5/circuits\ \ and\ systems/DownSample_single_high_mem {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/ALU.v}
+vlog -vlog01compat -work work +incdir+G:/UOM\ Semester\ 5/circuits\ \ and\ systems/DownSample_single_high_mem {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/processor.v}
+vlog -vlog01compat -work work +incdir+G:/UOM\ Semester\ 5/circuits\ \ and\ systems/DownSample_single_high_mem {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/memory_unit.v}
+vlog -vlog01compat -work work +incdir+G:/UOM\ Semester\ 5/circuits\ \ and\ systems/DownSample_single_high_mem {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/ins_ram.v}
+vlog -vlog01compat -work work +incdir+G:/UOM\ Semester\ 5/circuits\ \ and\ systems/DownSample_single_high_mem {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v}
+vlog -vlog01compat -work work +incdir+G:/UOM\ Semester\ 5/circuits\ \ and\ systems/DownSample_single_high_mem {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/top_mod.v}
+

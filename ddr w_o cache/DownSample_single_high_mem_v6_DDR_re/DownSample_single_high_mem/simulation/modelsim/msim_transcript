@@ -1,0 +1,1075 @@
+# Reading C:/altera/13.0/modelsim_ase/tcl/vsim/pref.tcl 
+# do processor_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\13.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\13.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+G:/UOM\ Semester\ 5/circuits\ \ and\ systems/DownSample_single_high_mem {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/uart.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module uart
+# 
+# Top level modules:
+# 	uart
+# vlog -vlog01compat -work work +incdir+G:/UOM\ Semester\ 5/circuits\ \ and\ systems/DownSample_single_high_mem {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/transmitter.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module transmitter
+# 
+# Top level modules:
+# 	transmitter
+# vlog -vlog01compat -work work +incdir+G:/UOM\ Semester\ 5/circuits\ \ and\ systems/DownSample_single_high_mem {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/receiver.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module receiver
+# 
+# Top level modules:
+# 	receiver
+# vlog -vlog01compat -work work +incdir+G:/UOM\ Semester\ 5/circuits\ \ and\ systems/DownSample_single_high_mem {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/baud_rate_gen.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module baud_rate_gen
+# 
+# Top level modules:
+# 	baud_rate_gen
+# vlog -vlog01compat -work work +incdir+G:/UOM\ Semester\ 5/circuits\ \ and\ systems/DownSample_single_high_mem {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/UART_FSM.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module UART_FSM
+# 
+# Top level modules:
+# 	UART_FSM
+# vlog -vlog01compat -work work +incdir+G:/UOM\ Semester\ 5/circuits\ \ and\ systems/DownSample_single_high_mem {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/register8.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module registerIR
+# -- Compiling module registerPC
+# 
+# Top level modules:
+# 	registerIR
+# 	registerPC
+# vlog -vlog01compat -work work +incdir+G:/UOM\ Semester\ 5/circuits\ \ and\ systems/DownSample_single_high_mem {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/control_unit.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module control_unit
+# 
+# Top level modules:
+# 	control_unit
+# vlog -vlog01compat -work work +incdir+G:/UOM\ Semester\ 5/circuits\ \ and\ systems/DownSample_single_high_mem {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/register19.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module register19
+# -- Compiling module registerAC
+# 
+# Top level modules:
+# 	register19
+# 	registerAC
+# vlog -vlog01compat -work work +incdir+G:/UOM\ Semester\ 5/circuits\ \ and\ systems/DownSample_single_high_mem {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/register12.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module register12
+# 
+# Top level modules:
+# 	register12
+# vlog -vlog01compat -work work +incdir+G:/UOM\ Semester\ 5/circuits\ \ and\ systems/DownSample_single_high_mem {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/datapath.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module datapath
+# 
+# Top level modules:
+# 	datapath
+# vlog -vlog01compat -work work +incdir+G:/UOM\ Semester\ 5/circuits\ \ and\ systems/DownSample_single_high_mem {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/Bmux.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Bmux
+# 
+# Top level modules:
+# 	Bmux
+# vlog -vlog01compat -work work +incdir+G:/UOM\ Semester\ 5/circuits\ \ and\ systems/DownSample_single_high_mem {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/Amux.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Amux
+# 
+# Top level modules:
+# 	Amux
+# vlog -vlog01compat -work work +incdir+G:/UOM\ Semester\ 5/circuits\ \ and\ systems/DownSample_single_high_mem {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/ALU.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module ALU
+# 
+# Top level modules:
+# 	ALU
+# vlog -vlog01compat -work work +incdir+G:/UOM\ Semester\ 5/circuits\ \ and\ systems/DownSample_single_high_mem {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/processor.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module processor
+# 
+# Top level modules:
+# 	processor
+# vlog -vlog01compat -work work +incdir+G:/UOM\ Semester\ 5/circuits\ \ and\ systems/DownSample_single_high_mem {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/memory_unit.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module memory_unit
+# 
+# Top level modules:
+# 	memory_unit
+# vlog -vlog01compat -work work +incdir+G:/UOM\ Semester\ 5/circuits\ \ and\ systems/DownSample_single_high_mem {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/ins_ram.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module ins_ram
+# 
+# Top level modules:
+# 	ins_ram
+# vlog -vlog01compat -work work +incdir+G:/UOM\ Semester\ 5/circuits\ \ and\ systems/DownSample_single_high_mem {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module img_in_ram
+# -- Compiling module img_in_ram_tb
+# 
+# Top level modules:
+# 	img_in_ram_tb
+# vlog -vlog01compat -work work +incdir+G:/UOM\ Semester\ 5/circuits\ \ and\ systems/DownSample_single_high_mem {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/top_mod.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module top_mod
+# 
+# Top level modules:
+# 	top_mod
+# 
+vlog -vlog01compat -work work {+incdir+G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem} -O0 {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module img_in_ram
+# -- Compiling module img_in_ram_tb
+# 
+# Top level modules:
+# 	img_in_ram_tb
+vlog -vlog01compat -work work {+incdir+G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem} -O0 {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module img_in_ram
+# -- Compiling module img_in_ram_tb
+# 
+# Top level modules:
+# 	img_in_ram_tb
+vsim work.img_in_ram_tb
+# vsim work.img_in_ram_tb 
+# Loading work.img_in_ram_tb
+# Loading work.img_in_ram
+# ** Warning: (vsim-3017) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(218): [TFMPC] - Too few port connections. Expected 11, found 9.
+# 
+#         Region: /img_in_ram_tb/img_in_ram_tb1
+# ** Warning: (vsim-3722) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(218): [TFMPC] - Missing connection for port 'addr_a'.
+# 
+# ** Warning: (vsim-3722) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(218): [TFMPC] - Missing connection for port 'addr_b'.
+# 
+add wave -position end  sim:/img_in_ram_tb/data_a
+add wave -position end  sim:/img_in_ram_tb/data_b
+add wave -position end  sim:/img_in_ram_tb/addr_a
+add wave -position end  sim:/img_in_ram_tb/addr_b
+add wave -position end  sim:/img_in_ram_tb/we_a
+add wave -position end  sim:/img_in_ram_tb/we_b
+add wave -position end  sim:/img_in_ram_tb/clk
+add wave -position end  sim:/img_in_ram_tb/q_a
+add wave -position end  sim:/img_in_ram_tb/q_b
+add wave -position end  sim:/img_in_ram_tb/d_ready
+add wave -position end  sim:/img_in_ram_tb/test
+run -all
+# ** Note: $finish    : G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(246)
+#    Time: 520 ns  Iteration: 0  Instance: /img_in_ram_tb
+# 1
+# Break in Module img_in_ram_tb at G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v line 246
+vlog -vlog01compat -work work {+incdir+G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem} -O0 {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module img_in_ram
+# -- Compiling module img_in_ram_tb
+# 
+# Top level modules:
+# 	img_in_ram_tb
+vlog -vlog01compat -work work {+incdir+G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem} -O0 {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module img_in_ram
+# -- Compiling module img_in_ram_tb
+# 
+# Top level modules:
+# 	img_in_ram_tb
+vsim work.img_in_ram_tb
+# vsim work.img_in_ram_tb 
+# Loading work.img_in_ram_tb
+# Loading work.img_in_ram
+# ** Warning: (vsim-3017) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(218): [TFMPC] - Too few port connections. Expected 11, found 9.
+# 
+#         Region: /img_in_ram_tb/img_in_ram_tb1
+# ** Warning: (vsim-3722) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(218): [TFMPC] - Missing connection for port 'addr_a'.
+# 
+# ** Warning: (vsim-3722) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(218): [TFMPC] - Missing connection for port 'addr_b'.
+# 
+add wave -position end  sim:/img_in_ram_tb/data_a
+add wave -position end  sim:/img_in_ram_tb/data_b
+add wave -position end  sim:/img_in_ram_tb/addr_a
+add wave -position end  sim:/img_in_ram_tb/addr_b
+add wave -position end  sim:/img_in_ram_tb/we_a
+add wave -position end  sim:/img_in_ram_tb/we_b
+add wave -position end  sim:/img_in_ram_tb/clk
+add wave -position end  sim:/img_in_ram_tb/q_a
+add wave -position end  sim:/img_in_ram_tb/q_b
+add wave -position end  sim:/img_in_ram_tb/d_ready
+add wave -position end  sim:/img_in_ram_tb/test
+run -all
+# ** Note: $finish    : G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(246)
+#    Time: 520 ns  Iteration: 0  Instance: /img_in_ram_tb
+# 1
+# Break in Module img_in_ram_tb at G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v line 246
+vlog -vlog01compat -work work {+incdir+G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem} -O0 {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module img_in_ram
+# -- Compiling module img_in_ram_tb
+# 
+# Top level modules:
+# 	img_in_ram_tb
+vlog -vlog01compat -work work {+incdir+G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem} -O0 {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module img_in_ram
+# -- Compiling module img_in_ram_tb
+# 
+# Top level modules:
+# 	img_in_ram_tb
+vsim work.img_in_ram_tb
+# vsim work.img_in_ram_tb 
+# Loading work.img_in_ram_tb
+# Loading work.img_in_ram
+# ** Warning: (vsim-3017) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(218): [TFMPC] - Too few port connections. Expected 11, found 9.
+# 
+#         Region: /img_in_ram_tb/img_in_ram_tb1
+# ** Warning: (vsim-3722) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(218): [TFMPC] - Missing connection for port 'addr_a'.
+# 
+# ** Warning: (vsim-3722) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(218): [TFMPC] - Missing connection for port 'addr_b'.
+# 
+add wave -position end  sim:/img_in_ram_tb/data_a
+add wave -position end  sim:/img_in_ram_tb/data_b
+add wave -position end  sim:/img_in_ram_tb/addr_a
+add wave -position end  sim:/img_in_ram_tb/addr_b
+add wave -position end  sim:/img_in_ram_tb/we_a
+add wave -position end  sim:/img_in_ram_tb/we_b
+add wave -position end  sim:/img_in_ram_tb/clk
+add wave -position end  sim:/img_in_ram_tb/q_a
+add wave -position end  sim:/img_in_ram_tb/q_b
+add wave -position end  sim:/img_in_ram_tb/d_ready
+add wave -position end  sim:/img_in_ram_tb/test
+run -all
+# ** Note: $finish    : G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(246)
+#    Time: 800 ns  Iteration: 0  Instance: /img_in_ram_tb
+# 1
+# Break in Module img_in_ram_tb at G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v line 246
+vlog -vlog01compat -work work {+incdir+G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem} -O0 {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module img_in_ram
+# -- Compiling module img_in_ram_tb
+# 
+# Top level modules:
+# 	img_in_ram_tb
+vlog -vlog01compat -work work {+incdir+G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem} -O0 {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module img_in_ram
+# -- Compiling module img_in_ram_tb
+# 
+# Top level modules:
+# 	img_in_ram_tb
+vsim work.img_in_ram_tb
+# vsim work.img_in_ram_tb 
+# Loading work.img_in_ram_tb
+# Loading work.img_in_ram
+# ** Warning: (vsim-3017) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(218): [TFMPC] - Too few port connections. Expected 11, found 9.
+# 
+#         Region: /img_in_ram_tb/img_in_ram_tb1
+# ** Warning: (vsim-3722) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(218): [TFMPC] - Missing connection for port 'addr_a'.
+# 
+# ** Warning: (vsim-3722) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(218): [TFMPC] - Missing connection for port 'addr_b'.
+# 
+add wave -position end  sim:/img_in_ram_tb/data_a
+add wave -position end  sim:/img_in_ram_tb/data_b
+add wave -position end  sim:/img_in_ram_tb/addr_a
+add wave -position end  sim:/img_in_ram_tb/addr_b
+add wave -position end  sim:/img_in_ram_tb/we_a
+add wave -position end  sim:/img_in_ram_tb/we_b
+add wave -position end  sim:/img_in_ram_tb/clk
+add wave -position end  sim:/img_in_ram_tb/q_a
+add wave -position end  sim:/img_in_ram_tb/q_b
+add wave -position end  sim:/img_in_ram_tb/d_ready
+add wave -position end  sim:/img_in_ram_tb/test
+run -all
+# ** Note: $finish    : G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(246)
+#    Time: 800 ns  Iteration: 0  Instance: /img_in_ram_tb
+# 1
+# Break in Module img_in_ram_tb at G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v line 246
+vlog -vlog01compat -work work {+incdir+G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem} -O0 {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module img_in_ram
+# -- Compiling module img_in_ram_tb
+# 
+# Top level modules:
+# 	img_in_ram_tb
+vlog -vlog01compat -work work {+incdir+G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem} -O0 {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module img_in_ram
+# -- Compiling module img_in_ram_tb
+# 
+# Top level modules:
+# 	img_in_ram_tb
+vsim work.img_in_ram_tb
+# vsim work.img_in_ram_tb 
+# Loading work.img_in_ram_tb
+# Loading work.img_in_ram
+# ** Warning: (vsim-3017) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(223): [TFMPC] - Too few port connections. Expected 11, found 9.
+# 
+#         Region: /img_in_ram_tb/img_in_ram_tb1
+# ** Warning: (vsim-3722) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(223): [TFMPC] - Missing connection for port 'addr_a'.
+# 
+# ** Warning: (vsim-3722) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(223): [TFMPC] - Missing connection for port 'addr_b'.
+# 
+add wave -position end  sim:/img_in_ram_tb/data_a
+add wave -position end  sim:/img_in_ram_tb/data_b
+add wave -position end  sim:/img_in_ram_tb/addr_a
+add wave -position end  sim:/img_in_ram_tb/addr_b
+add wave -position end  sim:/img_in_ram_tb/we_a
+add wave -position end  sim:/img_in_ram_tb/we_b
+add wave -position end  sim:/img_in_ram_tb/clk
+add wave -position end  sim:/img_in_ram_tb/q_a
+add wave -position end  sim:/img_in_ram_tb/q_b
+add wave -position end  sim:/img_in_ram_tb/d_ready
+add wave -position end  sim:/img_in_ram_tb/test
+run -all
+# ** Note: $finish    : G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(251)
+#    Time: 800 ns  Iteration: 0  Instance: /img_in_ram_tb
+# 1
+# Break in Module img_in_ram_tb at G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v line 251
+vlog -vlog01compat -work work {+incdir+G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem} -O0 {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module img_in_ram
+# -- Compiling module img_in_ram_tb
+# 
+# Top level modules:
+# 	img_in_ram_tb
+vlog -vlog01compat -work work {+incdir+G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem} -O0 {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module img_in_ram
+# -- Compiling module img_in_ram_tb
+# 
+# Top level modules:
+# 	img_in_ram_tb
+vsim work.img_in_ram_tb
+# vsim work.img_in_ram_tb 
+# Loading work.img_in_ram_tb
+# Loading work.img_in_ram
+# ** Warning: (vsim-3017) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(223): [TFMPC] - Too few port connections. Expected 11, found 9.
+# 
+#         Region: /img_in_ram_tb/img_in_ram_tb1
+# ** Warning: (vsim-3722) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(223): [TFMPC] - Missing connection for port 'addr_a'.
+# 
+# ** Warning: (vsim-3722) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(223): [TFMPC] - Missing connection for port 'addr_b'.
+# 
+add wave -position end  sim:/img_in_ram_tb/data_a
+add wave -position end  sim:/img_in_ram_tb/data_b
+add wave -position end  sim:/img_in_ram_tb/addr_a
+add wave -position end  sim:/img_in_ram_tb/addr_b
+add wave -position end  sim:/img_in_ram_tb/we_a
+add wave -position end  sim:/img_in_ram_tb/we_b
+add wave -position end  sim:/img_in_ram_tb/clk
+add wave -position end  sim:/img_in_ram_tb/q_a
+add wave -position end  sim:/img_in_ram_tb/q_b
+add wave -position end  sim:/img_in_ram_tb/d_ready
+add wave -position end  sim:/img_in_ram_tb/test
+run -all
+# ** Note: $finish    : G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(251)
+#    Time: 800 ns  Iteration: 0  Instance: /img_in_ram_tb
+# 1
+# Break in Module img_in_ram_tb at G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v line 251
+vlog -vlog01compat -work work {+incdir+G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem} -O0 {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module img_in_ram
+# -- Compiling module img_in_ram_tb
+# 
+# Top level modules:
+# 	img_in_ram_tb
+vlog -vlog01compat -work work {+incdir+G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem} -O0 {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module img_in_ram
+# -- Compiling module img_in_ram_tb
+# 
+# Top level modules:
+# 	img_in_ram_tb
+vsim work.img_in_ram_tb
+# vsim work.img_in_ram_tb 
+# Loading work.img_in_ram_tb
+# Loading work.img_in_ram
+# ** Warning: (vsim-3017) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(225): [TFMPC] - Too few port connections. Expected 11, found 9.
+# 
+#         Region: /img_in_ram_tb/img_in_ram_tb1
+# ** Warning: (vsim-3722) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(225): [TFMPC] - Missing connection for port 'addr_a'.
+# 
+# ** Warning: (vsim-3722) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(225): [TFMPC] - Missing connection for port 'addr_b'.
+# 
+add wave -position end  sim:/img_in_ram_tb/data_a
+add wave -position end  sim:/img_in_ram_tb/data_b
+add wave -position end  sim:/img_in_ram_tb/addr_a
+add wave -position end  sim:/img_in_ram_tb/addr_b
+add wave -position end  sim:/img_in_ram_tb/we_a
+add wave -position end  sim:/img_in_ram_tb/we_b
+add wave -position end  sim:/img_in_ram_tb/clk
+add wave -position end  sim:/img_in_ram_tb/q_a
+add wave -position end  sim:/img_in_ram_tb/q_b
+add wave -position end  sim:/img_in_ram_tb/d_ready
+add wave -position end  sim:/img_in_ram_tb/test
+run -all
+# ** Note: $finish    : G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(253)
+#    Time: 800 ns  Iteration: 0  Instance: /img_in_ram_tb
+# 1
+# Break in Module img_in_ram_tb at G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v line 253
+vlog -vlog01compat -work work {+incdir+G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem} -O0 {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module img_in_ram
+# -- Compiling module img_in_ram_tb
+# 
+# Top level modules:
+# 	img_in_ram_tb
+vlog -vlog01compat -work work {+incdir+G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem} -O0 {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module img_in_ram
+# -- Compiling module img_in_ram_tb
+# 
+# Top level modules:
+# 	img_in_ram_tb
+vsim work.img_in_ram_tb
+# vsim work.img_in_ram_tb 
+# Loading work.img_in_ram_tb
+# Loading work.img_in_ram
+# ** Warning: (vsim-3017) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(226): [TFMPC] - Too few port connections. Expected 11, found 9.
+# 
+#         Region: /img_in_ram_tb/img_in_ram_tb1
+# ** Warning: (vsim-3722) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(226): [TFMPC] - Missing connection for port 'addr_a'.
+# 
+# ** Warning: (vsim-3722) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(226): [TFMPC] - Missing connection for port 'addr_b'.
+# 
+add wave -position end  sim:/img_in_ram_tb/data_a
+add wave -position end  sim:/img_in_ram_tb/data_b
+add wave -position end  sim:/img_in_ram_tb/addr_a
+add wave -position end  sim:/img_in_ram_tb/addr_b
+add wave -position end  sim:/img_in_ram_tb/we_a
+add wave -position end  sim:/img_in_ram_tb/we_b
+add wave -position end  sim:/img_in_ram_tb/clk
+add wave -position end  sim:/img_in_ram_tb/q_a
+add wave -position end  sim:/img_in_ram_tb/q_b
+add wave -position end  sim:/img_in_ram_tb/d_ready
+add wave -position end  sim:/img_in_ram_tb/test
+run -all
+# ** Note: $finish    : G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(254)
+#    Time: 800 ns  Iteration: 0  Instance: /img_in_ram_tb
+# 1
+# Break in Module img_in_ram_tb at G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v line 254
+vlog -vlog01compat -work work {+incdir+G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem} -O0 {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module img_in_ram
+# -- Compiling module img_in_ram_tb
+# 
+# Top level modules:
+# 	img_in_ram_tb
+vlog -vlog01compat -work work {+incdir+G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem} -O0 {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module img_in_ram
+# -- Compiling module img_in_ram_tb
+# 
+# Top level modules:
+# 	img_in_ram_tb
+vsim work.img_in_ram_tb
+# vsim work.img_in_ram_tb 
+# Loading work.img_in_ram_tb
+# Loading work.img_in_ram
+# ** Warning: (vsim-3017) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(230): [TFMPC] - Too few port connections. Expected 12, found 10.
+# 
+#         Region: /img_in_ram_tb/img_in_ram_tb1
+# ** Warning: (vsim-3722) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(230): [TFMPC] - Missing connection for port 'addr_a'.
+# 
+# ** Warning: (vsim-3722) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(230): [TFMPC] - Missing connection for port 'addr_b'.
+# 
+add wave -position end  sim:/img_in_ram_tb/data_a
+add wave -position end  sim:/img_in_ram_tb/data_b
+add wave -position end  sim:/img_in_ram_tb/addr_a
+add wave -position end  sim:/img_in_ram_tb/addr_b
+add wave -position end  sim:/img_in_ram_tb/we_a
+add wave -position end  sim:/img_in_ram_tb/we_b
+add wave -position end  sim:/img_in_ram_tb/clk
+add wave -position end  sim:/img_in_ram_tb/q_a
+add wave -position end  sim:/img_in_ram_tb/q_b
+add wave -position end  sim:/img_in_ram_tb/d_ready
+add wave -position end  sim:/img_in_ram_tb/test
+add wave -position end  sim:/img_in_ram_tb/delay_temp
+run -all
+# ** Note: $finish    : G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(258)
+#    Time: 800 ns  Iteration: 0  Instance: /img_in_ram_tb
+# 1
+# Break in Module img_in_ram_tb at G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v line 258
+vlog -vlog01compat -work work {+incdir+G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem} -O0 {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module img_in_ram
+# -- Compiling module img_in_ram_tb
+# 
+# Top level modules:
+# 	img_in_ram_tb
+vlog -vlog01compat -work work {+incdir+G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem} -O0 {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module img_in_ram
+# -- Compiling module img_in_ram_tb
+# 
+# Top level modules:
+# 	img_in_ram_tb
+vlog -vlog01compat -work work {+incdir+G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem} -O0 {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module img_in_ram
+# -- Compiling module img_in_ram_tb
+# 
+# Top level modules:
+# 	img_in_ram_tb
+vsim work.img_in_ram_tb
+# vsim work.img_in_ram_tb 
+# Loading work.img_in_ram_tb
+# Loading work.img_in_ram
+# ** Warning: (vsim-3017) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(230): [TFMPC] - Too few port connections. Expected 12, found 10.
+# 
+#         Region: /img_in_ram_tb/img_in_ram_tb1
+# ** Warning: (vsim-3722) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(230): [TFMPC] - Missing connection for port 'addr_a'.
+# 
+# ** Warning: (vsim-3722) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(230): [TFMPC] - Missing connection for port 'addr_b'.
+# 
+add wave -position end  sim:/img_in_ram_tb/data_a
+add wave -position end  sim:/img_in_ram_tb/data_b
+add wave -position end  sim:/img_in_ram_tb/addr_a
+add wave -position end  sim:/img_in_ram_tb/addr_b
+add wave -position end  sim:/img_in_ram_tb/we_a
+add wave -position end  sim:/img_in_ram_tb/we_b
+add wave -position end  sim:/img_in_ram_tb/clk
+add wave -position end  sim:/img_in_ram_tb/q_a
+add wave -position end  sim:/img_in_ram_tb/q_b
+add wave -position end  sim:/img_in_ram_tb/d_ready
+add wave -position end  sim:/img_in_ram_tb/test
+add wave -position end  sim:/img_in_ram_tb/delay_temp
+run -all
+# ** Note: $finish    : G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(258)
+#    Time: 800 ns  Iteration: 0  Instance: /img_in_ram_tb
+# 1
+# Break in Module img_in_ram_tb at G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v line 258
+vlog -vlog01compat -work work {+incdir+G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem} -O0 {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module img_in_ram
+# -- Compiling module img_in_ram_tb
+# 
+# Top level modules:
+# 	img_in_ram_tb
+vlog -vlog01compat -work work {+incdir+G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem} -O0 {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module img_in_ram
+# -- Compiling module img_in_ram_tb
+# 
+# Top level modules:
+# 	img_in_ram_tb
+vsim work.img_in_ram_tb
+# vsim work.img_in_ram_tb 
+# Loading work.img_in_ram_tb
+# Loading work.img_in_ram
+# ** Warning: (vsim-3017) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(230): [TFMPC] - Too few port connections. Expected 12, found 10.
+# 
+#         Region: /img_in_ram_tb/img_in_ram_tb1
+# ** Warning: (vsim-3722) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(230): [TFMPC] - Missing connection for port 'addr_a'.
+# 
+# ** Warning: (vsim-3722) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(230): [TFMPC] - Missing connection for port 'addr_b'.
+# 
+add wave -position end  sim:/img_in_ram_tb/data_a
+add wave -position end  sim:/img_in_ram_tb/data_b
+add wave -position end  sim:/img_in_ram_tb/addr_a
+add wave -position end  sim:/img_in_ram_tb/addr_b
+add wave -position end  sim:/img_in_ram_tb/we_a
+add wave -position end  sim:/img_in_ram_tb/we_b
+add wave -position end  sim:/img_in_ram_tb/clk
+add wave -position end  sim:/img_in_ram_tb/q_a
+add wave -position end  sim:/img_in_ram_tb/q_b
+add wave -position end  sim:/img_in_ram_tb/d_ready
+add wave -position end  sim:/img_in_ram_tb/test
+add wave -position end  sim:/img_in_ram_tb/delay_temp
+run -all
+# ** Note: $finish    : G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(258)
+#    Time: 800 ns  Iteration: 0  Instance: /img_in_ram_tb
+# 1
+# Break in Module img_in_ram_tb at G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v line 258
+vsim work.img_in_ram_tb
+# vsim work.img_in_ram_tb 
+# Loading work.img_in_ram_tb
+# Loading work.img_in_ram
+# ** Warning: (vsim-3017) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(230): [TFMPC] - Too few port connections. Expected 12, found 10.
+# 
+#         Region: /img_in_ram_tb/img_in_ram_tb1
+# ** Warning: (vsim-3722) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(230): [TFMPC] - Missing connection for port 'addr_a'.
+# 
+# ** Warning: (vsim-3722) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(230): [TFMPC] - Missing connection for port 'addr_b'.
+# 
+vlog -vlog01compat -work work {+incdir+G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem} -O0 {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module img_in_ram
+# -- Compiling module img_in_ram_tb
+# 
+# Top level modules:
+# 	img_in_ram_tb
+vlog -vlog01compat -work work {+incdir+G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem} -O0 {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module img_in_ram
+# -- Compiling module img_in_ram_tb
+# 
+# Top level modules:
+# 	img_in_ram_tb
+vsim work.img_in_ram_tb
+# vsim work.img_in_ram_tb 
+# Loading work.img_in_ram_tb
+# Loading work.img_in_ram
+# ** Warning: (vsim-3017) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(233): [TFMPC] - Too few port connections. Expected 13, found 11.
+# 
+#         Region: /img_in_ram_tb/img_in_ram_tb1
+# ** Warning: (vsim-3722) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(233): [TFMPC] - Missing connection for port 'addr_a'.
+# 
+# ** Warning: (vsim-3722) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(233): [TFMPC] - Missing connection for port 'addr_b'.
+# 
+add wave -position end  sim:/img_in_ram_tb/data_a
+add wave -position end  sim:/img_in_ram_tb/data_b
+add wave -position end  sim:/img_in_ram_tb/addr_a
+add wave -position end  sim:/img_in_ram_tb/addr_b
+add wave -position end  sim:/img_in_ram_tb/we_a
+add wave -position end  sim:/img_in_ram_tb/we_b
+add wave -position end  sim:/img_in_ram_tb/clk
+add wave -position end  sim:/img_in_ram_tb/q_a
+add wave -position end  sim:/img_in_ram_tb/q_b
+add wave -position end  sim:/img_in_ram_tb/d_ready
+add wave -position end  sim:/img_in_ram_tb/test
+add wave -position end  sim:/img_in_ram_tb/delay_temp
+add wave -position end  sim:/img_in_ram_tb/prev_addr_a
+run -all
+# ** Note: $finish    : G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(261)
+#    Time: 800 ns  Iteration: 0  Instance: /img_in_ram_tb
+# 1
+# Break in Module img_in_ram_tb at G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v line 261
+vlog -vlog01compat -work work {+incdir+G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem} -O0 {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module img_in_ram
+# -- Compiling module img_in_ram_tb
+# 
+# Top level modules:
+# 	img_in_ram_tb
+vlog -vlog01compat -work work {+incdir+G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem} -O0 {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module img_in_ram
+# -- Compiling module img_in_ram_tb
+# 
+# Top level modules:
+# 	img_in_ram_tb
+vsim work.img_in_ram_tb
+# vsim work.img_in_ram_tb 
+# Loading work.img_in_ram_tb
+# Loading work.img_in_ram
+# ** Warning: (vsim-3017) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(234): [TFMPC] - Too few port connections. Expected 13, found 11.
+# 
+#         Region: /img_in_ram_tb/img_in_ram_tb1
+# ** Warning: (vsim-3722) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(234): [TFMPC] - Missing connection for port 'addr_a'.
+# 
+# ** Warning: (vsim-3722) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(234): [TFMPC] - Missing connection for port 'addr_b'.
+# 
+add wave -position end  sim:/img_in_ram_tb/data_a
+add wave -position end  sim:/img_in_ram_tb/data_b
+add wave -position end  sim:/img_in_ram_tb/addr_a
+add wave -position end  sim:/img_in_ram_tb/addr_b
+add wave -position end  sim:/img_in_ram_tb/we_a
+add wave -position end  sim:/img_in_ram_tb/we_b
+add wave -position end  sim:/img_in_ram_tb/clk
+add wave -position end  sim:/img_in_ram_tb/q_a
+add wave -position end  sim:/img_in_ram_tb/q_b
+add wave -position end  sim:/img_in_ram_tb/d_ready
+add wave -position end  sim:/img_in_ram_tb/test
+add wave -position end  sim:/img_in_ram_tb/delay_temp
+add wave -position end  sim:/img_in_ram_tb/prev_addr_a
+run -all
+# ** Note: $finish    : G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(262)
+#    Time: 800 ns  Iteration: 0  Instance: /img_in_ram_tb
+# 1
+# Break in Module img_in_ram_tb at G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v line 262
+vlog -vlog01compat -work work {+incdir+G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem} -O0 {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module img_in_ram
+# -- Compiling module img_in_ram_tb
+# 
+# Top level modules:
+# 	img_in_ram_tb
+vlog -vlog01compat -work work {+incdir+G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem} -O0 {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module img_in_ram
+# -- Compiling module img_in_ram_tb
+# 
+# Top level modules:
+# 	img_in_ram_tb
+vsim work.img_in_ram_tb
+# vsim work.img_in_ram_tb 
+# Loading work.img_in_ram_tb
+# Loading work.img_in_ram
+# ** Warning: (vsim-3017) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(234): [TFMPC] - Too few port connections. Expected 13, found 11.
+# 
+#         Region: /img_in_ram_tb/img_in_ram_tb1
+# ** Warning: (vsim-3722) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(234): [TFMPC] - Missing connection for port 'addr_a'.
+# 
+# ** Warning: (vsim-3722) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(234): [TFMPC] - Missing connection for port 'addr_b'.
+# 
+add wave -position end  sim:/img_in_ram_tb/data_a
+add wave -position end  sim:/img_in_ram_tb/data_b
+add wave -position end  sim:/img_in_ram_tb/addr_a
+add wave -position end  sim:/img_in_ram_tb/addr_b
+add wave -position end  sim:/img_in_ram_tb/we_a
+add wave -position end  sim:/img_in_ram_tb/we_b
+add wave -position end  sim:/img_in_ram_tb/clk
+add wave -position end  sim:/img_in_ram_tb/q_a
+add wave -position end  sim:/img_in_ram_tb/q_b
+add wave -position end  sim:/img_in_ram_tb/d_ready
+add wave -position end  sim:/img_in_ram_tb/test
+add wave -position end  sim:/img_in_ram_tb/delay_temp
+add wave -position end  sim:/img_in_ram_tb/prev_addr_a
+run -all
+# ** Note: $finish    : G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(261)
+#    Time: 780 ns  Iteration: 0  Instance: /img_in_ram_tb
+# 1
+# Break in Module img_in_ram_tb at G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v line 261
+vlog -vlog01compat -work work {+incdir+G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem} -O0 {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module img_in_ram
+# -- Compiling module img_in_ram_tb
+# 
+# Top level modules:
+# 	img_in_ram_tb
+vlog -vlog01compat -work work {+incdir+G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem} -O0 {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module img_in_ram
+# -- Compiling module img_in_ram_tb
+# 
+# Top level modules:
+# 	img_in_ram_tb
+vsim work.img_in_ram_tb
+# vsim work.img_in_ram_tb 
+# Loading work.img_in_ram_tb
+# Loading work.img_in_ram
+# ** Warning: (vsim-3017) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(238): [TFMPC] - Too few port connections. Expected 13, found 11.
+# 
+#         Region: /img_in_ram_tb/img_in_ram_tb1
+# ** Warning: (vsim-3722) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(238): [TFMPC] - Missing connection for port 'addr_a'.
+# 
+# ** Warning: (vsim-3722) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(238): [TFMPC] - Missing connection for port 'addr_b'.
+# 
+add wave -position end  sim:/img_in_ram_tb/data_a
+add wave -position end  sim:/img_in_ram_tb/data_b
+add wave -position end  sim:/img_in_ram_tb/addr_a
+add wave -position end  sim:/img_in_ram_tb/addr_b
+add wave -position end  sim:/img_in_ram_tb/we_a
+add wave -position end  sim:/img_in_ram_tb/we_b
+add wave -position end  sim:/img_in_ram_tb/clk
+add wave -position end  sim:/img_in_ram_tb/q_a
+add wave -position end  sim:/img_in_ram_tb/q_b
+add wave -position end  sim:/img_in_ram_tb/d_ready
+add wave -position end  sim:/img_in_ram_tb/test
+add wave -position end  sim:/img_in_ram_tb/delay_temp
+add wave -position end  sim:/img_in_ram_tb/prev_addr_a
+run -all
+# ** Note: $finish    : G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(265)
+#    Time: 780 ns  Iteration: 0  Instance: /img_in_ram_tb
+# 1
+# Break in Module img_in_ram_tb at G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v line 265
+vlog -vlog01compat -work work {+incdir+G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem} -O0 {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module img_in_ram
+# -- Compiling module img_in_ram_tb
+# 
+# Top level modules:
+# 	img_in_ram_tb
+vlog -vlog01compat -work work {+incdir+G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem} -O0 {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module img_in_ram
+# -- Compiling module img_in_ram_tb
+# 
+# Top level modules:
+# 	img_in_ram_tb
+vsim work.img_in_ram_tb
+# vsim work.img_in_ram_tb 
+# Loading work.img_in_ram_tb
+# Loading work.img_in_ram
+# ** Warning: (vsim-3017) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(243): [TFMPC] - Too few port connections. Expected 13, found 11.
+# 
+#         Region: /img_in_ram_tb/img_in_ram_tb1
+# ** Warning: (vsim-3722) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(243): [TFMPC] - Missing connection for port 'addr_a'.
+# 
+# ** Warning: (vsim-3722) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(243): [TFMPC] - Missing connection for port 'addr_b'.
+# 
+add wave -position end  sim:/img_in_ram_tb/data_a
+add wave -position end  sim:/img_in_ram_tb/data_b
+add wave -position end  sim:/img_in_ram_tb/addr_a
+add wave -position end  sim:/img_in_ram_tb/addr_b
+add wave -position end  sim:/img_in_ram_tb/we_a
+add wave -position end  sim:/img_in_ram_tb/we_b
+add wave -position end  sim:/img_in_ram_tb/clk
+add wave -position end  sim:/img_in_ram_tb/q_a
+add wave -position end  sim:/img_in_ram_tb/q_b
+add wave -position end  sim:/img_in_ram_tb/d_ready
+add wave -position end  sim:/img_in_ram_tb/test
+add wave -position end  sim:/img_in_ram_tb/delay_temp
+add wave -position end  sim:/img_in_ram_tb/prev_addr_a
+run -all
+# ** Note: $finish    : G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(270)
+#    Time: 780 ns  Iteration: 0  Instance: /img_in_ram_tb
+# 1
+# Break in Module img_in_ram_tb at G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v line 270
+vlog -vlog01compat -work work {+incdir+G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem} -O0 {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module img_in_ram
+# -- Compiling module img_in_ram_tb
+# 
+# Top level modules:
+# 	img_in_ram_tb
+vlog -vlog01compat -work work {+incdir+G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem} -O0 {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module img_in_ram
+# -- Compiling module img_in_ram_tb
+# 
+# Top level modules:
+# 	img_in_ram_tb
+vsim work.img_in_ram_tb
+# vsim work.img_in_ram_tb 
+# Loading work.img_in_ram_tb
+# Loading work.img_in_ram
+# ** Warning: (vsim-3017) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(243): [TFMPC] - Too few port connections. Expected 13, found 11.
+# 
+#         Region: /img_in_ram_tb/img_in_ram_tb1
+# ** Warning: (vsim-3722) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(243): [TFMPC] - Missing connection for port 'addr_a'.
+# 
+# ** Warning: (vsim-3722) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(243): [TFMPC] - Missing connection for port 'addr_b'.
+# 
+add wave -position end  sim:/img_in_ram_tb/data_a
+add wave -position end  sim:/img_in_ram_tb/data_b
+add wave -position end  sim:/img_in_ram_tb/addr_a
+add wave -position end  sim:/img_in_ram_tb/addr_b
+add wave -position end  sim:/img_in_ram_tb/we_a
+add wave -position end  sim:/img_in_ram_tb/we_b
+add wave -position end  sim:/img_in_ram_tb/clk
+add wave -position end  sim:/img_in_ram_tb/q_a
+add wave -position end  sim:/img_in_ram_tb/q_b
+add wave -position end  sim:/img_in_ram_tb/d_ready
+add wave -position end  sim:/img_in_ram_tb/test
+add wave -position end  sim:/img_in_ram_tb/delay_temp
+add wave -position end  sim:/img_in_ram_tb/prev_addr_a
+run -all
+# ** Note: $finish    : G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(270)
+#    Time: 780 ns  Iteration: 0  Instance: /img_in_ram_tb
+# 1
+# Break in Module img_in_ram_tb at G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v line 270
+vlog -vlog01compat -work work {+incdir+G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem} -O0 {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module img_in_ram
+# -- Compiling module img_in_ram_tb
+# 
+# Top level modules:
+# 	img_in_ram_tb
+vlog -vlog01compat -work work {+incdir+G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem} -O0 {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module img_in_ram
+# -- Compiling module img_in_ram_tb
+# 
+# Top level modules:
+# 	img_in_ram_tb
+vsim work.img_in_ram_tb
+# vsim work.img_in_ram_tb 
+# Loading work.img_in_ram_tb
+# Loading work.img_in_ram
+# ** Warning: (vsim-3017) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(243): [TFMPC] - Too few port connections. Expected 13, found 11.
+# 
+#         Region: /img_in_ram_tb/img_in_ram_tb1
+# ** Warning: (vsim-3722) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(243): [TFMPC] - Missing connection for port 'addr_a'.
+# 
+# ** Warning: (vsim-3722) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(243): [TFMPC] - Missing connection for port 'addr_b'.
+# 
+add wave -position end  sim:/img_in_ram_tb/data_a
+add wave -position end  sim:/img_in_ram_tb/data_b
+add wave -position end  sim:/img_in_ram_tb/addr_a
+add wave -position end  sim:/img_in_ram_tb/addr_b
+add wave -position end  sim:/img_in_ram_tb/we_a
+add wave -position end  sim:/img_in_ram_tb/we_b
+add wave -position end  sim:/img_in_ram_tb/clk
+add wave -position end  sim:/img_in_ram_tb/q_a
+add wave -position end  sim:/img_in_ram_tb/q_b
+add wave -position end  sim:/img_in_ram_tb/d_ready
+add wave -position end  sim:/img_in_ram_tb/test
+add wave -position end  sim:/img_in_ram_tb/delay_temp
+add wave -position end  sim:/img_in_ram_tb/prev_addr_a
+run -all
+# ** Note: $finish    : G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(270)
+#    Time: 780 ns  Iteration: 0  Instance: /img_in_ram_tb
+# 1
+# Break in Module img_in_ram_tb at G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v line 270
+vlog -vlog01compat -work work {+incdir+G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem} -O0 {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module img_in_ram
+# -- Compiling module img_in_ram_tb
+# 
+# Top level modules:
+# 	img_in_ram_tb
+vlog -vlog01compat -work work {+incdir+G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem} -O0 {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module img_in_ram
+# -- Compiling module img_in_ram_tb
+# 
+# Top level modules:
+# 	img_in_ram_tb
+vsim work.img_in_ram_tb
+# vsim work.img_in_ram_tb 
+# Loading work.img_in_ram_tb
+# Loading work.img_in_ram
+# ** Warning: (vsim-3017) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(243): [TFMPC] - Too few port connections. Expected 13, found 11.
+# 
+#         Region: /img_in_ram_tb/img_in_ram_tb1
+# ** Warning: (vsim-3722) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(243): [TFMPC] - Missing connection for port 'addr_a'.
+# 
+# ** Warning: (vsim-3722) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(243): [TFMPC] - Missing connection for port 'addr_b'.
+# 
+add wave -position end  sim:/img_in_ram_tb/data_a
+add wave -position end  sim:/img_in_ram_tb/data_b
+add wave -position end  sim:/img_in_ram_tb/addr_a
+add wave -position end  sim:/img_in_ram_tb/addr_b
+add wave -position end  sim:/img_in_ram_tb/we_a
+add wave -position end  sim:/img_in_ram_tb/we_b
+add wave -position end  sim:/img_in_ram_tb/clk
+add wave -position end  sim:/img_in_ram_tb/q_a
+add wave -position end  sim:/img_in_ram_tb/q_b
+add wave -position end  sim:/img_in_ram_tb/d_ready
+add wave -position end  sim:/img_in_ram_tb/test
+add wave -position end  sim:/img_in_ram_tb/delay_temp
+add wave -position end  sim:/img_in_ram_tb/prev_addr_a
+run -all
+# ** Note: $finish    : G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(270)
+#    Time: 780 ns  Iteration: 0  Instance: /img_in_ram_tb
+# 1
+# Break in Module img_in_ram_tb at G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v line 270
+vlog -vlog01compat -work work {+incdir+G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem} -O0 {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module img_in_ram
+# -- Compiling module img_in_ram_tb
+# 
+# Top level modules:
+# 	img_in_ram_tb
+vlog -vlog01compat -work work {+incdir+G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem} -O0 {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module img_in_ram
+# -- Compiling module img_in_ram_tb
+# 
+# Top level modules:
+# 	img_in_ram_tb
+vsim work.img_in_ram_tb
+# vsim work.img_in_ram_tb 
+# Loading work.img_in_ram_tb
+# Loading work.img_in_ram
+# ** Warning: (vsim-3017) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(245): [TFMPC] - Too few port connections. Expected 13, found 11.
+# 
+#         Region: /img_in_ram_tb/img_in_ram_tb1
+# ** Warning: (vsim-3722) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(245): [TFMPC] - Missing connection for port 'addr_a'.
+# 
+# ** Warning: (vsim-3722) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(245): [TFMPC] - Missing connection for port 'addr_b'.
+# 
+add wave -position end  sim:/img_in_ram_tb/data_a
+add wave -position end  sim:/img_in_ram_tb/data_b
+add wave -position end  sim:/img_in_ram_tb/addr_a
+add wave -position end  sim:/img_in_ram_tb/addr_b
+add wave -position end  sim:/img_in_ram_tb/we_a
+add wave -position end  sim:/img_in_ram_tb/we_b
+add wave -position end  sim:/img_in_ram_tb/clk
+add wave -position end  sim:/img_in_ram_tb/q_a
+add wave -position end  sim:/img_in_ram_tb/q_b
+add wave -position end  sim:/img_in_ram_tb/d_ready
+add wave -position end  sim:/img_in_ram_tb/test
+add wave -position end  sim:/img_in_ram_tb/delay_temp
+add wave -position end  sim:/img_in_ram_tb/prev_addr_a
+run -all
+# ** Note: $finish    : G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(272)
+#    Time: 780 ns  Iteration: 0  Instance: /img_in_ram_tb
+# 1
+# Break in Module img_in_ram_tb at G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v line 272
+vlog -vlog01compat -work work {+incdir+G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem} -O0 {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module img_in_ram
+# -- Compiling module img_in_ram_tb
+# 
+# Top level modules:
+# 	img_in_ram_tb
+vlog -vlog01compat -work work {+incdir+G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem} -O0 {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module img_in_ram
+# -- Compiling module img_in_ram_tb
+# 
+# Top level modules:
+# 	img_in_ram_tb
+vsim work.img_in_ram_tb
+# vsim work.img_in_ram_tb 
+# Loading work.img_in_ram_tb
+# Loading work.img_in_ram
+# ** Warning: (vsim-3017) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(246): [TFMPC] - Too few port connections. Expected 13, found 11.
+# 
+#         Region: /img_in_ram_tb/img_in_ram_tb1
+# ** Warning: (vsim-3722) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(246): [TFMPC] - Missing connection for port 'addr_a'.
+# 
+# ** Warning: (vsim-3722) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(246): [TFMPC] - Missing connection for port 'addr_b'.
+# 
+add wave -position end  sim:/img_in_ram_tb/data_a
+add wave -position end  sim:/img_in_ram_tb/data_b
+add wave -position end  sim:/img_in_ram_tb/addr_a
+add wave -position end  sim:/img_in_ram_tb/addr_b
+add wave -position end  sim:/img_in_ram_tb/we_a
+add wave -position end  sim:/img_in_ram_tb/we_b
+add wave -position end  sim:/img_in_ram_tb/clk
+add wave -position end  sim:/img_in_ram_tb/q_a
+add wave -position end  sim:/img_in_ram_tb/q_b
+add wave -position end  sim:/img_in_ram_tb/d_ready
+add wave -position end  sim:/img_in_ram_tb/test
+add wave -position end  sim:/img_in_ram_tb/delay_temp
+add wave -position end  sim:/img_in_ram_tb/prev_addr_a
+run -all
+# ** Note: $finish    : G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(273)
+#    Time: 780 ns  Iteration: 0  Instance: /img_in_ram_tb
+# 1
+# Break in Module img_in_ram_tb at G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v line 273
+# WARNING: No extended dataflow license exists
+# WARNING: No extended dataflow license exists
+vlog -vlog01compat -work work {+incdir+G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem} -O0 {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module img_in_ram
+# -- Compiling module img_in_ram_tb
+# 
+# Top level modules:
+# 	img_in_ram_tb
+vlog -vlog01compat -work work {+incdir+G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem} -O0 {G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module img_in_ram
+# -- Compiling module img_in_ram_tb
+# 
+# Top level modules:
+# 	img_in_ram_tb
+vsim work.img_in_ram_tb
+# vsim work.img_in_ram_tb 
+# Loading work.img_in_ram_tb
+# Loading work.img_in_ram
+# ** Warning: (vsim-3017) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(162): [TFMPC] - Too few port connections. Expected 13, found 11.
+# 
+#         Region: /img_in_ram_tb/img_in_ram_tb1
+# ** Warning: (vsim-3722) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(162): [TFMPC] - Missing connection for port 'addr_a'.
+# 
+# ** Warning: (vsim-3722) G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(162): [TFMPC] - Missing connection for port 'addr_b'.
+# 
+add wave -position end  sim:/img_in_ram_tb/data_a
+add wave -position end  sim:/img_in_ram_tb/data_b
+add wave -position end  sim:/img_in_ram_tb/addr_a
+add wave -position end  sim:/img_in_ram_tb/addr_b
+add wave -position end  sim:/img_in_ram_tb/we_a
+add wave -position end  sim:/img_in_ram_tb/we_b
+add wave -position end  sim:/img_in_ram_tb/clk
+add wave -position end  sim:/img_in_ram_tb/q_a
+add wave -position end  sim:/img_in_ram_tb/q_b
+add wave -position end  sim:/img_in_ram_tb/d_ready
+add wave -position end  sim:/img_in_ram_tb/test
+add wave -position end  sim:/img_in_ram_tb/delay_temp
+add wave -position end  sim:/img_in_ram_tb/prev_addr_a
+run -all
+# ** Note: $finish    : G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v(189)
+#    Time: 780 ns  Iteration: 0  Instance: /img_in_ram_tb
+# 1
+# Break in Module img_in_ram_tb at G:/UOM Semester 5/circuits  and systems/DownSample_single_high_mem/img_in_ram.v line 189
+# can't read "winData(0,tabid)": no such element in array
+# error on .main_pane.source -closecommand : expected boolean value but got "can't read "winData(0,fid)": no such element in ar"

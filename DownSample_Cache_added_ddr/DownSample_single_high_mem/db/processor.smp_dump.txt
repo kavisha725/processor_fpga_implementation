@@ -1,0 +1,65 @@
+
+State Machine - |top_mod|UART_FSM:uart_fsm1|ram_sel
+Name ram_sel.INS_RAM 
+ram_sel.IMG_IN_RAM 0 
+ram_sel.INS_RAM 1 
+
+State Machine - |top_mod|UART_FSM:uart_fsm1|mode
+Name mode.CMD_DEC mode.CMD_TX mode.CMD_RX 
+mode.CMD_DEC 0 0 0 
+mode.CMD_RX 1 0 1 
+mode.CMD_TX 1 1 0 
+
+State Machine - |top_mod|UART_FSM:uart_fsm1|next_state
+Name next_state.STATE_RX3 next_state.STATE_RX2 next_state.STATE_RX1 next_state.STATE_CHECK_RX next_state.STATE_RX_DATA1 
+next_state.STATE_CHECK_RX 0 0 0 0 0 
+next_state.STATE_RX1 0 0 1 1 0 
+next_state.STATE_RX2 0 1 0 1 0 
+next_state.STATE_RX3 1 0 0 1 0 
+next_state.STATE_RX_DATA1 0 0 0 1 1 
+
+State Machine - |top_mod|UART_FSM:uart_fsm1|curr_state
+Name curr_state.STATE_END3 curr_state.STATE_END2 curr_state.STATE_END1 curr_state.STATE_START2 curr_state.STATE_START1 curr_state.STATE_TX_BUSY curr_state.STATE_TX_DATA4 curr_state.STATE_TX_DATA3 curr_state.STATE_TX_DATA2 curr_state.STATE_TX_DATA1 curr_state.STATE_TX1 curr_state.STATE_RX_DATA5 curr_state.STATE_RX_DATA4 curr_state.STATE_RX_DATA3 curr_state.STATE_RX_DATA2 curr_state.STATE_RX_DATA1 curr_state.STATE_RX3 curr_state.STATE_RX2 curr_state.STATE_RX1 curr_state.STATE_CHECK_RX 
+curr_state.STATE_CHECK_RX 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+curr_state.STATE_RX1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+curr_state.STATE_RX2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+curr_state.STATE_RX3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+curr_state.STATE_RX_DATA1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+curr_state.STATE_RX_DATA2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+curr_state.STATE_RX_DATA3 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+curr_state.STATE_RX_DATA4 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+curr_state.STATE_RX_DATA5 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+curr_state.STATE_TX1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+curr_state.STATE_TX_DATA1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+curr_state.STATE_TX_DATA2 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+curr_state.STATE_TX_DATA3 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+curr_state.STATE_TX_DATA4 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+curr_state.STATE_TX_BUSY 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+curr_state.STATE_START1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+curr_state.STATE_START2 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+curr_state.STATE_END1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+curr_state.STATE_END2 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+curr_state.STATE_END3 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |top_mod|UART_FSM:uart_fsm1|uart:uart1|receiver:uart_rx|state
+Name state.RX_STATE_START state.RX_STATE_STOP state.RX_STATE_DATA 
+state.RX_STATE_START 0 0 0 
+state.RX_STATE_DATA 1 0 1 
+state.RX_STATE_STOP 1 1 0 
+
+State Machine - |top_mod|UART_FSM:uart_fsm1|uart:uart1|transmitter:uart_tx|state
+Name state.STATE_STOP state.STATE_DATA state.STATE_START state.STATE_IDLE 
+state.STATE_IDLE 0 0 0 0 
+state.STATE_START 0 0 1 1 
+state.STATE_DATA 0 1 0 1 
+state.STATE_STOP 1 0 0 1 
+
+State Machine - |top_mod|memory_unit:mu1|CacheTop:CacheModule|FSMControl:FSMControl|state
+Name state.Reset_State state.Data_Load_3rd state.Data_Load_2nd state.Data_Load_1st state.Read_Wait state.Write_Wait state.000 
+state.000 0 0 0 0 0 0 0 
+state.Write_Wait 0 0 0 0 0 1 1 
+state.Read_Wait 0 0 0 0 1 0 1 
+state.Data_Load_1st 0 0 0 1 0 0 1 
+state.Data_Load_2nd 0 0 1 0 0 0 1 
+state.Data_Load_3rd 0 1 0 0 0 0 1 
+state.Reset_State 1 0 0 0 0 0 1 

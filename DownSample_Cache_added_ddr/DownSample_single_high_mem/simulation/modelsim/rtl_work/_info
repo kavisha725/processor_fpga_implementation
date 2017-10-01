@@ -1,0 +1,452 @@
+m255
+K3
+13
+cModel Technology
+Z0 dG:\UOM Semester 5\circuits  and systems\processor_final_final\processor\DownSample_single_high_mem_ddr_with_testbench\DownSample_single_high_mem\simulation\modelsim
+vALU
+I^E44K[S1U6LM]WZ7;W^Dg2
+VU8MF<RbnR5fkim=A=@P]<2
+Z1 dG:\UOM Semester 5\circuits  and systems\processor_final_final\processor\DownSample_single_high_mem_ddr_with_testbench\DownSample_single_high_mem\simulation\modelsim
+Z2 w1499146272
+8G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/ALU.v
+FG:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/ALU.v
+L0 1
+Z3 OV;L;10.1d;51
+r1
+31
+Z4 o-vlog01compat -work work -O0
+Z5 !s92 -vlog01compat -work work {+incdir+G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem} -O0
+n@a@l@u
+!i10b 1
+!s100 Y@=3IDeS@2Qz>z<06S@2g2
+!s85 0
+!s108 1500485598.290000
+!s107 G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/ALU.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem|G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/ALU.v|
+!s101 -O0
+vAmux
+I?6]UVL`35J14nU;<UTUlj1
+V9[_7^W:PJkYXk8AFRb81G2
+R1
+R2
+8G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/Amux.v
+FG:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/Amux.v
+L0 1
+R3
+r1
+31
+R4
+R5
+n@amux
+!i10b 1
+!s100 g`FnPFaKN^KifPiSJd@iO0
+!s85 0
+!s108 1500485597.711000
+!s107 G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/Amux.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem|G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/Amux.v|
+!s101 -O0
+vbaud_rate_gen
+I>6BbJ8_XNZcHY6fMjV8]Q0
+V1a=Dzz7F66Gm[`ZZA3`Cz0
+R1
+R2
+8G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/baud_rate_gen.v
+FG:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/baud_rate_gen.v
+L0 5
+R3
+r1
+31
+R4
+R5
+!i10b 1
+!s100 c@ACD;i:NmL;Ed@<hMI:S1
+!s85 0
+!s108 1500485592.323000
+!s107 G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/baud_rate_gen.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem|G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/baud_rate_gen.v|
+!s101 -O0
+vBmux
+IzDmF8_T]8>I6e^h;Oa4NC1
+VURJ^=7@fB4>dO?W]L5dJd1
+R1
+R2
+8G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/Bmux.v
+FG:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/Bmux.v
+L0 1
+R3
+r1
+31
+R4
+R5
+n@bmux
+!i10b 1
+!s100 `>3Dae2K[1l;E_ZmKLHEA2
+!s85 0
+!s108 1500485597.305000
+!s107 G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/Bmux.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem|G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/Bmux.v|
+!s101 -O0
+vcontrol_unit
+I_Pdk93Aj1M>8hd=iP0]6g2
+V@CBOJz=HRbJ<@m8A`MB6c0
+R1
+w1499883424
+8G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/control_unit.v
+FG:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/control_unit.v
+L0 1
+R3
+r1
+31
+R4
+R5
+!i10b 1
+!s100 j8NR`fAUNfdA?;866@AzQ0
+!s85 0
+!s108 1500485594.589000
+!s107 G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/control_unit.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem|G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/control_unit.v|
+!s101 -O0
+vdatapath
+I<AJ[J@eh:=<dQDL>0dDRK2
+VBTf6RGXbGVkgh7;Ki:F:E1
+R1
+R2
+8G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/datapath.v
+FG:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/datapath.v
+L0 1
+R3
+r1
+31
+R4
+R5
+!i10b 1
+!s100 dZVniSUO_HWG>FMMcSN:@3
+!s85 0
+!s108 1500485596.666000
+!s107 G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/datapath.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem|G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/datapath.v|
+!s101 -O0
+vimg_in_ddr
+!i10b 1
+!s100 00<E^m2:bc<_iIAifl6MH0
+IiVJTOeUC;WS9d7`1JGAzf1
+VZN[eW<L<M;h;cieXKQ=VU3
+R1
+Z6 w1500485287
+Z7 8G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/img_in_ddr.v
+Z8 FG:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/img_in_ddr.v
+L0 1
+R3
+r1
+!s85 0
+31
+Z9 !s108 1500485600.518000
+Z10 !s107 G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/img_in_ddr.v|
+Z11 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem|G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/img_in_ddr.v|
+!s101 -O0
+R4
+R5
+vimg_in_ddr_tb
+!i10b 1
+!s100 SYDF]XAZ_X_RN?9CFIQ6E0
+ITlA[`T_[=7UBgY[GJMkno3
+VX9[dIg@;jSkT9U[R`OBOl1
+R1
+R6
+R7
+R8
+L0 147
+R3
+r1
+!s85 0
+31
+R9
+R10
+R11
+!s101 -O0
+R4
+R5
+vins_ram
+I8B1COMCRI58^?UbmTJz^A2
+VU=;zmV=hTCEbJli0];la@3
+R1
+Z12 w1499438504
+Z13 8G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/ins_ram.v
+Z14 FG:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/ins_ram.v
+L0 41
+R3
+r1
+31
+Z15 !s108 1500485599.431000
+Z16 !s107 G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/ins_ram.v|
+Z17 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem|G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/ins_ram.v|
+R4
+R5
+!i10b 1
+!s100 iB87eTaKDMJioVPOHeWN;0
+!s85 0
+!s101 -O0
+vins_ram_tb
+I@A`iL=Rmc8hJ_PR_<f2R12
+VKB=?P8@_386jWVkBi<R4[0
+R1
+R12
+R13
+R14
+L0 86
+R3
+r1
+31
+R15
+R16
+R17
+R4
+R5
+!i10b 1
+!s100 JoSl<S1g9V=H>iiabDnW60
+!s85 0
+!s101 -O0
+vmemory_unit
+IM91NmO28HAL[o?oQJM>Bz0
+VPoO3gEjDgI88GCXQUz6ZY1
+R1
+w1500485303
+8G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/memory_unit.v
+FG:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/memory_unit.v
+L0 114
+R3
+r1
+31
+R4
+R5
+!i10b 1
+!s100 S``LgGVCGV>2hTWT]4]h>0
+!s85 0
+!s108 1500485599.071000
+!s107 G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/memory_unit.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem|G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/memory_unit.v|
+!s101 -O0
+vprocessor
+IHVMeASaJURam60fz1FTh41
+VnZ>SV9lMeKjhjQ;Q42X4`2
+R1
+w1499878762
+8G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/processor.v
+FG:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/processor.v
+L0 1
+R3
+r1
+31
+R4
+R5
+!i10b 1
+!s100 l0CU=Q5[^J=OKj??LIVQd1
+!s85 0
+!s108 1500485598.680000
+!s107 G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/processor.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem|G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/processor.v|
+!s101 -O0
+vreceiver
+IkRm5e48k;[HjiMd2W:0XZ3
+VY^X5=5^PJ0BT@X79jEfio1
+R1
+R2
+8G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/receiver.v
+FG:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/receiver.v
+L0 1
+R3
+r1
+31
+R4
+R5
+!i10b 1
+!s100 M5hgD:JQT>3B9[>z<joL?1
+!s85 0
+!s108 1500485588.534000
+!s107 G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/receiver.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem|G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/receiver.v|
+!s101 -O0
+vregister12
+InOi;DHI0>4XPT@[dB=NcE1
+VA2A:XbWTmTKZPR[Q4b2d_1
+R1
+R2
+8G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/register12.v
+FG:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/register12.v
+L0 1
+R3
+r1
+31
+R4
+R5
+!i10b 1
+!s100 aUJYQ2@c0n>lN9o:TLkni2
+!s85 0
+!s108 1500485596.152000
+!s107 G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/register12.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem|G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/register12.v|
+!s101 -O0
+vregister19
+Iz9l0R<4:Nc<dkMHEUU:631
+VQW57HHK__@gONUFdGD^5j0
+R1
+R2
+Z18 8G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/register19.v
+Z19 FG:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/register19.v
+L0 1
+R3
+r1
+31
+Z20 !s108 1500485595.058000
+Z21 !s107 G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/register19.v|
+Z22 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem|G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/register19.v|
+R4
+R5
+!i10b 1
+!s100 Pfd7i@0XVfMHb8:=[Vo^z2
+!s85 0
+!s101 -O0
+vregisterAC
+I59e>1dj8cz[B`id]Tagi20
+V;oVK_9XbjzgS@ii5HV=;81
+R1
+R2
+R18
+R19
+L0 16
+R3
+r1
+31
+R20
+R21
+R22
+R4
+R5
+nregister@a@c
+!i10b 1
+!s100 fkRSVWUmh4KdQbImIn`kz3
+!s85 0
+!s101 -O0
+vregisterIR
+I8XX;HYO_3cz2I0]D::`;V0
+VZ8CP^ITb7HiQGzc3nE4cD3
+R1
+R2
+Z23 8G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/register8.v
+Z24 FG:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/register8.v
+L0 1
+R3
+r1
+31
+Z25 !s108 1500485593.433000
+Z26 !s107 G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/register8.v|
+Z27 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem|G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/register8.v|
+R4
+R5
+nregister@i@r
+!i10b 1
+!s100 Z27E>eLhbloMhEg8hO9aP1
+!s85 0
+!s101 -O0
+vregisterPC
+IQZQUaR8faD`dO7c<O:^K@3
+VL@h_^Dm5VV@AG@=@H7l>=2
+R1
+R2
+R23
+R24
+L0 31
+R3
+r1
+31
+R25
+R26
+R27
+R4
+R5
+nregister@p@c
+!i10b 1
+!s100 c3kee<LC7gTG6i886O85[2
+!s85 0
+!s101 -O0
+vtop_mod
+IQFhFHebmPJQL?ING[kB7i1
+V9YL?cg@dCibAb91HdX59>2
+R1
+w1499884046
+8G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/top_mod.v
+FG:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/top_mod.v
+L0 1
+R3
+r1
+31
+R4
+R5
+!i10b 1
+!s100 f7Jo150d@>MCK7XR0_5Y<0
+!s85 0
+!s108 1500485600.290000
+!s107 G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/top_mod.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem|G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/top_mod.v|
+!s101 -O0
+vtransmitter
+IZ:7nb;:_eaiFBiWBU1f2k1
+V=]O9mXo_nQ:0T`JPTb>Ed0
+R1
+R2
+8G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/transmitter.v
+FG:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/transmitter.v
+L0 1
+R3
+r1
+31
+R4
+R5
+!i10b 1
+!s100 GaN:1I2Y39GgiU`J@3M6P3
+!s85 0
+!s108 1500485587.259000
+!s107 G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/transmitter.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem|G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/transmitter.v|
+!s101 -O0
+vuart
+I6i4g<1kf>0kmFbJNXWaf^0
+V<^2B1VMc8lb1f=l25E9^^1
+R1
+R2
+8G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/uart.v
+FG:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/uart.v
+L0 1
+R3
+r1
+31
+R4
+R5
+!i10b 1
+!s100 `9ZNVZ30VQL<HLkJh>3BC2
+!s85 0
+!s108 1500485584.995000
+!s107 G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/uart.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem|G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/uart.v|
+!s101 -O0
+vUART_FSM
+IMBJSV5DQocciCEg[ZKmmm3
+V]@c:7=RCYU;Q6_[nRKH250
+R1
+R2
+8G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/UART_FSM.v
+FG:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/UART_FSM.v
+L0 1
+R3
+r1
+31
+R4
+R5
+n@u@a@r@t_@f@s@m
+!i10b 1
+!s100 aL72iSj5U4]@NdmCYDGg73
+!s85 0
+!s108 1500485593.073000
+!s107 G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/UART_FSM.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem|G:/UOM Semester 5/circuits  and systems/processor_final_final/processor/DownSample_single_high_mem_ddr_with_testbench/DownSample_single_high_mem/UART_FSM.v|
+!s101 -O0

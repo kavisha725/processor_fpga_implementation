@@ -1,0 +1,936 @@
+module control_unit( input wire clk,
+							input wire rst,
+							input wire START_FLAG,
+							input wire Z,
+							input wire Z1,
+							output reg RD_M_INS = 1'b0,
+							output reg RD_MI = 1'b0,
+							output reg WR_MO = 1'b0,
+							output reg [8:0] LOAD_VECT = 9'b0,
+							/*output reg INC_PC = 1'b0,*/
+							output reg [5:0] CLEAR_VECT = 6'b0,
+							output reg [2:0] AMUX = 3'b0,
+							output reg [2:0] BMUX = 3'b0,
+							output reg [2:0] ALU_OP = 3'b0,
+							output reg PASS_AC = 1'b0,
+							/*xoutput reg PASS_IR = 1'b0,*/
+							output reg END_FLAG = 1'b0,
+							input wire [7:0] M_INS_DATA,
+							output wire [7:0] M_INS_ADD,
+							// testing ********************************
+							//output wire [7:0]state2
+							input wire d_ready_re,///
+							input wire d_ready_we///
+							);
+							
+	/* LOAD_VECT = 	x0 - LD_MINS_IR		CLEAR_VECT = 	0 - CLR_AC
+							0 - LD_MI_AC								1 - CLR_RS
+							1 - LD_ALU_AC								2 - CLR_RX
+							2 - LD_AC_RH								3 - CLR_RI
+							3 - LD_AC_RW								4 - CLR_RJ
+							4 - LD_AC_RS								5 - CLR_RK
+							5 - LD_AC_RX
+							6 - LD_AC_RI
+							7 - LD_AC_RJ
+							8 - LD_AC_RK
+							x10 - LD_IR_PC
+	*/
+	parameter START 		= 8'd0,	CLAC	 		= 8'd9,	DIVRS1 		= 8'd19,	DECRX_W 		= 8'd28;
+	parameter FETCH1 		= 8'd1,	CLRX	 		= 8'd10,	SUBRHRJ 		= 8'd20,	SHFT1 		= 8'd29;
+	parameter FETCH2		= 8'd2,	CLRS	 		= 8'd11,	SUBRWRI 		= 8'd21,	SHFT2 		= 8'd30;
+	parameter LDACRX1    = 8'd3,	CLRI	 		= 8'd12,	INRI1 		= 8'd22,	JUMP1 		= 8'd31;
+	parameter LDACRX2    = 8'd4,	CLRJ	 		= 8'd13,	INRJ1 		= 8'd23,	JUMP2 		= 8'd32;
+	parameter MVACRH1		= 8'd5,	CLRK 			= 8'd14,	INRK 			= 8'd24,	JMPZ1 		= 8'd33;
+	parameter MVACRW1		= 8'd6,	ADDRXAC1 	= 8'd15,	INRX 			= 8'd25,	JMPZ2 		= 8'd34;
+	parameter STRSRK1		= 8'd7,	ADDRXAC2 	= 8'd16,	DECRX 		= 8'd26,	JMPSP1 		= 8'd35;
+	parameter STRSRK2		= 8'd8,	ADDSUM1 		= 8'd17,	INRX_W 		= 8'd27,	JMPSP2 		= 8'd36;
+	
+	parameter ADDSUM2 	= 8'd18;
+	parameter END			= 8'd37,	END2			= 8'd38;
+	
+	parameter SEL_OP = 8'd39;
+	
+	reg [7:0] state = START;
+	
+	//assign state2 = state;	//*********************** testing
+	
+	// standard control signals
+	reg PASS_IR = 1'b0;
+	reg LD_MINS_IR = 1'b0;
+	reg LD_IR_PC = 1'b0;
+	reg INC_PC = 1'b0;
+	
+	// init control signals
+	reg CLR_PC = 1'b0;
+	reg CLR_IR = 1'b0;
+	
+	wire [7:0] IR_PC_DATA ;
+	
+	reg d_ready_reg_write = 1'b0;
+	reg d_ready_reg_read = 1'b0;
+	always @(negedge clk) begin
+		if (d_ready_re == 1'b1) begin
+			d_ready_reg_read <= 1'b1;
+		end
+		else if (state == FETCH2) begin
+			d_ready_reg_read <= 1'b0;
+		end
+		
+		if (d_ready_we == 1'b1) begin
+			d_ready_reg_write <= 1'b1;
+		end
+		else if (state == FETCH2) begin
+			d_ready_reg_write <= 1'b0;
+		end
+	end
+	
+	always @(posedge clk) begin
+		if (rst == 0) begin			// check
+			state <= START;
+			//led <= 1'b0;
+		end
+		case(state)
+			START: begin
+				if (START_FLAG === 1'b1) begin
+					// remove ir and pc clear
+					CLR_PC <= 1'b0;
+					CLR_IR <= 1'b0;
+					
+					state <= FETCH1;
+				end
+				else begin
+					RD_M_INS 	<= 1'b0;	// initialise
+					RD_MI 		<= 1'b0;
+					WR_MO 		<= 1'b0;
+					LD_MINS_IR 	<= 1'b0;
+					LD_IR_PC 	<= 1'b0;
+					LOAD_VECT 	<= 9'b0;
+					INC_PC 		<= 1'b0;
+					CLEAR_VECT 	<= 6'b0;
+					AMUX 			<= 3'b0;
+					BMUX 			<= 3'b0;
+					ALU_OP 		<= 3'b0;
+					PASS_AC 		<= 1'b0;
+					PASS_IR 		<= 1'b0;
+					END_FLAG 	<= 1'b0;
+					
+					// clear ir and pc
+					CLR_PC <= 1'b1;
+					CLR_IR <= 1'b1;
+					
+					state <= START;
+				end
+			end
+			
+			FETCH1: begin
+				RD_M_INS 	<= 1'b1;
+				RD_MI 		<= 1'b0;
+				WR_MO 		<= 1'b0;
+				LD_MINS_IR 	<= 1'b0;
+				LD_IR_PC 	<= 1'b0;
+				LOAD_VECT 	<= 9'b0;
+				INC_PC 		<= 1'b0;
+				CLEAR_VECT 	<= 6'b0;
+				AMUX 			<= 3'b0;
+				BMUX 			<= 3'b0;
+				ALU_OP 		<= 3'b0;
+				PASS_AC 		<= 1'b0;
+				PASS_IR 		<= 1'b0;
+				END_FLAG 	<= 1'b0;
+				
+				state <= FETCH2;
+			end
+			
+			FETCH2: begin
+				RD_M_INS 	<= 1'b1;
+				RD_MI 		<= 1'b0;
+				WR_MO 		<= 1'b0;
+				LD_MINS_IR 	<= 1'b1;
+				LD_IR_PC 	<= 1'b0;
+				LOAD_VECT 	<= 9'b0;
+				INC_PC 		<= 1'b1;
+				CLEAR_VECT 	<= 6'b0;
+				AMUX 			<= 3'b0;
+				BMUX 			<= 3'b0;
+				ALU_OP 		<= 3'b0;
+				PASS_AC 		<= 1'b0;
+				PASS_IR 		<= 1'b0;
+				END_FLAG 	<= 1'b0;
+				
+				state <= SEL_OP;
+			end
+			
+			SEL_OP: begin
+				RD_M_INS 	<= 1'b0;
+				RD_MI 		<= 1'b0;
+				WR_MO 		<= 1'b0;
+				LD_MINS_IR 	<= 1'b0;
+				LD_IR_PC 	<= 1'b0;
+				LOAD_VECT 	<= 9'b0;
+				INC_PC 		<= 1'b0;
+				CLEAR_VECT 	<= 6'b0;
+				AMUX 			<= 3'b0;
+				BMUX 			<= 3'b0;
+				ALU_OP 		<= 3'b0;
+				PASS_AC 		<= 1'b0;
+				PASS_IR 		<= 1'b0;
+				END_FLAG 	<= 1'b0;
+			
+				state <= IR_PC_DATA;
+			end
+			
+			LDACRX1: begin
+				RD_M_INS 	<= 1'b0;
+				RD_MI 		<= 1'b1;
+				WR_MO 		<= 1'b0;
+				LD_MINS_IR 	<= 1'b0;
+				LD_IR_PC 	<= 1'b0;
+				//LOAD_VECT 	<= 9'b0;
+				LOAD_VECT 	<= 9'b0_0000_0001;
+				INC_PC 		<= 1'b0;
+				CLEAR_VECT 	<= 6'b0;
+				AMUX 			<= 3'b0;
+				BMUX 			<= 3'b0;
+				ALU_OP 		<= 3'b0;
+				PASS_AC 		<= 1'b0;
+				PASS_IR 		<= 1'b0;
+				END_FLAG 	<= 1'b0;
+				
+				//state <= LDACRX2;
+				if (d_ready_reg_read) begin
+					//d_ready_reg <= 1'b0;
+					state <= FETCH1;
+				end
+				else begin
+					state <= LDACRX1;
+				end
+				
+			end
+			
+			LDACRX2: begin
+				RD_M_INS 	<= 1'b0;
+				RD_MI 		<= 1'b1;
+				WR_MO 		<= 1'b0;
+				LD_MINS_IR 	<= 1'b0;
+				LD_IR_PC 	<= 1'b0;
+				//LOAD_VECT 	<= 9'b0_0000_0001;
+				LOAD_VECT 	<= 9'b0;
+				INC_PC 		<= 1'b0;
+				CLEAR_VECT 	<= 6'b00_0000;
+				AMUX 			<= 3'b000;
+				BMUX 			<= 3'b000;
+				ALU_OP 		<= 3'b000;
+				PASS_AC 		<= 1'b0;
+				PASS_IR 		<= 1'b0;
+				END_FLAG 	<= 1'b0;
+				
+				state <= FETCH1;
+			end
+			
+			MVACRH1: begin
+				RD_M_INS 	<= 1'b0;
+				RD_MI 		<= 1'b0;
+				WR_MO 		<= 1'b0;
+				LD_MINS_IR 	<= 1'b0;
+				LD_IR_PC 	<= 1'b0;
+				LOAD_VECT 	<= 9'b0_0000_0100;
+				INC_PC 		<= 1'b0;
+				CLEAR_VECT 	<= 6'b00_0000;
+				AMUX 			<= 3'b000;
+				BMUX 			<= 3'b000;
+				ALU_OP 		<= 3'b000;
+				PASS_AC 		<= 1'b0;
+				PASS_IR 		<= 1'b0;
+				END_FLAG 	<= 1'b0;
+				
+				state <= FETCH1;
+			end
+			
+			MVACRW1: begin
+				RD_M_INS 	<= 1'b0;
+				RD_MI 		<= 1'b0;
+				WR_MO 		<= 1'b0;
+				LD_MINS_IR 	<= 1'b0;
+				LD_IR_PC 	<= 1'b0;
+				LOAD_VECT 	<= 9'b0_0000_1000;
+				INC_PC 		<= 1'b0;
+				CLEAR_VECT 	<= 6'b00_0000;
+				AMUX 			<= 3'b000;
+				BMUX 			<= 3'b000;
+				ALU_OP 		<= 3'b000;
+				PASS_AC 		<= 1'b0;
+				PASS_IR 		<= 1'b0;
+				END_FLAG 	<= 1'b0;
+				
+				state <= FETCH1;
+			end
+			
+			
+			STRSRK1: begin
+				RD_M_INS 	<= 1'b0;
+				RD_MI 		<= 1'b0;
+				WR_MO 		<= 1'b1;
+				LD_MINS_IR 	<= 1'b0;
+				LD_IR_PC 	<= 1'b0;
+				LOAD_VECT 	<= 9'b0_0000_0000;
+				INC_PC 		<= 1'b0;
+				CLEAR_VECT 	<= 6'b00_0000;
+				AMUX 			<= 3'b000;
+				BMUX 			<= 3'b000;
+				ALU_OP 		<= 3'b000;
+				PASS_AC 		<= 1'b0;
+				PASS_IR 		<= 1'b0;
+				END_FLAG 	<= 1'b0;
+				
+				//state <= STRSRK2;
+				if (d_ready_reg_write) begin
+					//d_ready_reg <= 1'b0;
+					state <= FETCH1;
+				end
+				else begin
+					state <= STRSRK1;
+				end
+			end
+			
+			STRSRK2: begin
+				RD_M_INS 	<= 1'b0;
+				RD_MI 		<= 1'b0;
+				WR_MO 		<= 1'b1;
+				LD_MINS_IR 	<= 1'b0;
+				LD_IR_PC 	<= 1'b0;
+				LOAD_VECT 	<= 9'b0_0000_0000;
+				INC_PC 		<= 1'b0;
+				CLEAR_VECT 	<= 6'b00_0000;
+				AMUX 			<= 3'b000;
+				BMUX 			<= 3'b000;
+				ALU_OP 		<= 3'b000;
+				PASS_AC 		<= 1'b0;
+				PASS_IR 		<= 1'b0;
+				END_FLAG 	<= 1'b0;
+				
+				state <= FETCH1;
+			end
+			
+			CLAC: begin
+				RD_M_INS 	<= 1'b0;
+				RD_MI 		<= 1'b0;
+				WR_MO 		<= 1'b0;
+				LD_MINS_IR 	<= 1'b0;
+				LD_IR_PC 	<= 1'b0;
+				LOAD_VECT 	<= 9'b0_0000_0000;
+				INC_PC 		<= 1'b0;
+				CLEAR_VECT 	<= 6'b00_0001;
+				AMUX 			<= 3'b000;
+				BMUX 			<= 3'b000;
+				ALU_OP 		<= 3'b000;
+				PASS_AC 		<= 1'b0;
+				PASS_IR 		<= 1'b0;
+				END_FLAG 	<= 1'b0;
+				
+				state <= FETCH1;
+			end
+			
+			CLRS: begin
+				RD_M_INS 	<= 1'b0;
+				RD_MI 		<= 1'b0;
+				WR_MO 		<= 1'b0;
+				LD_MINS_IR 	<= 1'b0;
+				LD_IR_PC 	<= 1'b0;
+				LOAD_VECT 	<= 9'b0_0000_0000;
+				INC_PC 		<= 1'b0;
+				CLEAR_VECT 	<= 6'b00_0010;
+				AMUX 			<= 3'b000;
+				BMUX 			<= 3'b000;
+				ALU_OP 		<= 3'b000;
+				PASS_AC 		<= 1'b0;
+				PASS_IR 		<= 1'b0;
+				END_FLAG 	<= 1'b0;
+				
+				state <= FETCH1;
+			end
+			
+			CLRX: begin
+				RD_M_INS 	<= 1'b0;
+				RD_MI 		<= 1'b0;
+				WR_MO 		<= 1'b0;
+				LD_MINS_IR 	<= 1'b0;
+				LD_IR_PC 	<= 1'b0;
+				LOAD_VECT 	<= 9'b0_0000_0000;
+				INC_PC 		<= 1'b0;
+				CLEAR_VECT 	<= 6'b00_0100;
+				AMUX 			<= 3'b000;
+				BMUX 			<= 3'b000;
+				ALU_OP 		<= 3'b000;
+				PASS_AC 		<= 1'b0;
+				PASS_IR 		<= 1'b0;
+				END_FLAG 	<= 1'b0;
+				
+				state <= FETCH1;
+			end
+			
+			CLRI: begin
+				RD_M_INS 	<= 1'b0;
+				RD_MI 		<= 1'b0;
+				WR_MO 		<= 1'b0;
+				LD_MINS_IR 	<= 1'b0;
+				LD_IR_PC 	<= 1'b0;
+				LOAD_VECT 	<= 9'b0_0000_0000;
+				INC_PC 		<= 1'b0;
+				CLEAR_VECT 	<= 6'b00_1000;
+				AMUX 			<= 3'b000;
+				BMUX 			<= 3'b000;
+				ALU_OP 		<= 3'b000;
+				PASS_AC 		<= 1'b0;
+				PASS_IR 		<= 1'b0;
+				END_FLAG 	<= 1'b0;
+				
+				state <= FETCH1;
+			end
+			
+			CLRJ: begin
+				RD_M_INS 	<= 1'b0;
+				RD_MI 		<= 1'b0;
+				WR_MO 		<= 1'b0;
+				LD_MINS_IR 	<= 1'b0;
+				LD_IR_PC 	<= 1'b0;
+				LOAD_VECT 	<= 9'b0_0000_0000;
+				INC_PC 		<= 1'b0;
+				CLEAR_VECT 	<= 6'b01_0000;
+				AMUX 			<= 3'b000;
+				BMUX 			<= 3'b000;
+				ALU_OP 		<= 3'b000;
+				PASS_AC 		<= 1'b0;
+				PASS_IR 		<= 1'b0;
+				END_FLAG 	<= 1'b0;
+				
+				state <= FETCH1;
+			end
+			
+			CLRK: begin
+				RD_M_INS 	<= 1'b0;
+				RD_MI 		<= 1'b0;
+				WR_MO 		<= 1'b0;
+				LD_MINS_IR 	<= 1'b0;
+				LD_IR_PC 	<= 1'b0;
+				LOAD_VECT 	<= 9'b0_0000_0000;
+				INC_PC 		<= 1'b0;
+				CLEAR_VECT 	<= 6'b10_0000;
+				AMUX 			<= 3'b000;
+				BMUX 			<= 3'b000;
+				ALU_OP 		<= 3'b000;
+				PASS_AC 		<= 1'b0;
+				PASS_IR 		<= 1'b0;
+				END_FLAG 	<= 1'b0;
+				
+				state <= FETCH1;
+			end		
+			
+			ADDRXAC1: begin
+				RD_M_INS 	<= 1'b0;
+				RD_MI 		<= 1'b0;
+				WR_MO 		<= 1'b0;
+				LD_MINS_IR 	<= 1'b0;
+				LD_IR_PC 	<= 1'b0;
+				LOAD_VECT 	<= 9'b0_0001_0000;
+				INC_PC 		<= 1'b0;
+				CLEAR_VECT 	<= 6'b00_0000;
+				AMUX 			<= 3'b000;
+				BMUX 			<= 3'b000;
+				ALU_OP 		<= 3'b000;
+				PASS_AC 		<= 1'b0;
+				PASS_IR 		<= 1'b0;
+				END_FLAG 	<= 1'b0;
+				
+				state <= ADDRXAC2;
+			end
+			
+			ADDRXAC2: begin
+				RD_M_INS 	<= 1'b0;
+				RD_MI 		<= 1'b0;
+				WR_MO 		<= 1'b0;
+				LD_MINS_IR 	<= 1'b0;
+				LD_IR_PC 	<= 1'b0;
+				LOAD_VECT 	<= 9'b0_0010_0010;
+				INC_PC 		<= 1'b0;
+				CLEAR_VECT 	<= 6'b00_0000;
+				AMUX 			<= 3'd0;
+				BMUX 			<= 3'd3;
+				ALU_OP 		<= 3'd0;
+				PASS_AC 		<= 1'b1;
+				PASS_IR 		<= 1'b0;
+				END_FLAG 	<= 1'b0;
+				
+				state <= FETCH1;
+			end
+			
+			ADDSUM1: begin
+				RD_M_INS 	<= 1'b0;
+				RD_MI 		<= 1'b0;
+				WR_MO 		<= 1'b0;
+				LD_MINS_IR 	<= 1'b0;
+				LD_IR_PC 	<= 1'b0;
+				LOAD_VECT 	<= 9'b0_0000_0010;
+				INC_PC 		<= 1'b0;
+				CLEAR_VECT 	<= 6'b00_0000;
+				AMUX 			<= 3'd0;
+				BMUX 			<= 3'd4;
+				ALU_OP 		<= 3'd0;
+				PASS_AC 		<= 1'b0;
+				PASS_IR 		<= 1'b0;
+				END_FLAG 	<= 1'b0;
+				
+				state <= ADDSUM2;
+			end
+			
+			ADDSUM2: begin
+				RD_M_INS 	<= 1'b0;
+				RD_MI 		<= 1'b0;
+				WR_MO 		<= 1'b0;
+				LD_MINS_IR 	<= 1'b0;
+				LD_IR_PC 	<= 1'b0;
+				LOAD_VECT 	<= 9'b0_0001_0000;
+				INC_PC 		<= 1'b0;
+				CLEAR_VECT 	<= 6'b00_0000;
+				AMUX 			<= 3'd0;
+				BMUX 			<= 3'd0;
+				ALU_OP 		<= 3'd0;
+				PASS_AC 		<= 1'b0;
+				PASS_IR 		<= 1'b0;
+				END_FLAG 	<= 1'b0;
+				
+				state <= FETCH1;
+			end
+			
+			DIVRS1: begin
+				RD_M_INS 	<= 1'b0;
+				RD_MI 		<= 1'b0;
+				WR_MO 		<= 1'b0;
+				LD_MINS_IR 	<= 1'b0;
+				LD_IR_PC 	<= 1'b0;
+				LOAD_VECT 	<= 9'b0_0001_0010;
+				INC_PC 		<= 1'b0;
+				CLEAR_VECT 	<= 6'b00_0000;
+				AMUX 			<= 3'd0;
+				BMUX 			<= 3'd0;
+				ALU_OP 		<= 3'd1;
+				PASS_AC 		<= 1'b1;
+				PASS_IR 		<= 1'b0;
+				END_FLAG 	<= 1'b0;
+				
+				state <= FETCH1;
+			end
+			
+			SUBRHRJ: begin
+				RD_M_INS 	<= 1'b0;
+				RD_MI 		<= 1'b0;
+				WR_MO 		<= 1'b0;
+				LD_MINS_IR 	<= 1'b0;
+				LD_IR_PC 	<= 1'b0;
+				LOAD_VECT 	<= 9'b0_0000_0010;
+				INC_PC 		<= 1'b0;
+				CLEAR_VECT 	<= 6'b00_0000;
+				AMUX 			<= 3'd2;
+				BMUX 			<= 3'd0;
+				ALU_OP 		<= 3'd2;
+				PASS_AC 		<= 1'b0;
+				PASS_IR 		<= 1'b0;
+				END_FLAG 	<= 1'b0;
+				
+				state <= FETCH1;
+			end
+			
+			SUBRWRI: begin
+				RD_M_INS 	<= 1'b0;
+				RD_MI 		<= 1'b0;
+				WR_MO 		<= 1'b0;
+				LD_MINS_IR 	<= 1'b0;
+				LD_IR_PC 	<= 1'b0;
+				LOAD_VECT 	<= 9'b0_0000_0010;
+				INC_PC 		<= 1'b0;
+				CLEAR_VECT 	<= 6'b00_0000;
+				AMUX 			<= 3'd1;
+				BMUX 			<= 3'd1;
+				ALU_OP 		<= 3'd2;
+				PASS_AC 		<= 1'b0;
+				PASS_IR 		<= 1'b0;
+				END_FLAG 	<= 1'b0;
+				
+				state <= FETCH1;
+			end
+			
+			INRI1: begin
+				RD_M_INS 	<= 1'b0;
+				RD_MI 		<= 1'b0;
+				WR_MO 		<= 1'b0;
+				LD_MINS_IR 	<= 1'b0;
+				LD_IR_PC 	<= 1'b0;
+				LOAD_VECT 	<= 9'b0_0100_0010;
+				INC_PC 		<= 1'b0;
+				CLEAR_VECT 	<= 6'b00_0000;
+				AMUX 			<= 3'd1;
+				BMUX 			<= 3'd0;
+				ALU_OP 		<= 3'd3;
+				PASS_AC 		<= 1'b1;
+				PASS_IR 		<= 1'b0;
+				END_FLAG 	<= 1'b0;
+				
+				state <= FETCH1;
+			end
+			
+			INRJ1: begin
+				RD_M_INS 	<= 1'b0;
+				RD_MI 		<= 1'b0;
+				WR_MO 		<= 1'b0;
+				LD_MINS_IR 	<= 1'b0;
+				LD_IR_PC 	<= 1'b0;
+				LOAD_VECT 	<= 9'b0_1000_0010;
+				INC_PC 		<= 1'b0;
+				CLEAR_VECT 	<= 6'b00_0000;
+				AMUX 			<= 3'd2;
+				BMUX 			<= 3'd0;
+				ALU_OP 		<= 3'd3;
+				PASS_AC 		<= 1'b1;
+				PASS_IR 		<= 1'b0;
+				END_FLAG 	<= 1'b0;
+				
+				state <= FETCH1;
+			end
+			
+			INRK: begin
+				RD_M_INS 	<= 1'b0;
+				RD_MI 		<= 1'b0;
+				WR_MO 		<= 1'b0;
+				LD_MINS_IR 	<= 1'b0;
+				LD_IR_PC 	<= 1'b0;
+				LOAD_VECT 	<= 9'b1_0000_0010;
+				INC_PC 		<= 1'b0;
+				CLEAR_VECT 	<= 6'b00_0000;
+				AMUX 			<= 3'd0;
+				BMUX 			<= 3'd2;
+				ALU_OP 		<= 3'd4;
+				PASS_AC 		<= 1'b1;
+				PASS_IR 		<= 1'b0;
+				END_FLAG 	<= 1'b0;
+				
+				state <= FETCH1;
+			end
+			
+			INRX: begin
+				RD_M_INS 	<= 1'b0;
+				RD_MI 		<= 1'b0;
+				WR_MO 		<= 1'b0;
+				LD_MINS_IR 	<= 1'b0;
+				LD_IR_PC 	<= 1'b0;
+				LOAD_VECT 	<= 9'b0_0010_0010;
+				INC_PC 		<= 1'b0;
+				CLEAR_VECT 	<= 6'b00_0000;
+				AMUX 			<= 3'd0;
+				BMUX 			<= 3'd3;
+				ALU_OP 		<= 3'd4;
+				PASS_AC 		<= 1'b1;
+				PASS_IR 		<= 1'b0;
+				END_FLAG 	<= 1'b0;
+				
+				state <= FETCH1;
+			end
+			
+			DECRX: begin
+				RD_M_INS 	<= 1'b0;
+				RD_MI 		<= 1'b0;
+				WR_MO 		<= 1'b0;
+				LD_MINS_IR 	<= 1'b0;
+				LD_IR_PC 	<= 1'b0;
+				LOAD_VECT 	<= 9'b0_0010_0010;
+				INC_PC 		<= 1'b0;
+				CLEAR_VECT 	<= 6'b00_0000;
+				AMUX 			<= 3'd0;
+				BMUX 			<= 3'd3;
+				ALU_OP 		<= 3'd5;
+				PASS_AC 		<= 1'b1;
+				PASS_IR 		<= 1'b0;
+				END_FLAG 	<= 1'b0;
+				
+				state <= FETCH1;
+			end
+			
+			INRX_W: begin
+				RD_M_INS 	<= 1'b0;
+				RD_MI 		<= 1'b0;
+				WR_MO 		<= 1'b0;
+				LD_MINS_IR 	<= 1'b0;
+				LD_IR_PC 	<= 1'b0;
+				LOAD_VECT 	<= 9'b0_0010_0010;
+				INC_PC 		<= 1'b0;
+				CLEAR_VECT 	<= 6'b00_0000;
+				AMUX 			<= 3'd4;
+				BMUX 			<= 3'd3;
+				ALU_OP 		<= 3'd0;
+				PASS_AC 		<= 1'b1;
+				PASS_IR 		<= 1'b0;
+				END_FLAG 	<= 1'b0;
+				
+				state <= FETCH1;
+			end
+			
+			DECRX_W: begin
+				RD_M_INS 	<= 1'b0;
+				RD_MI 		<= 1'b0;
+				WR_MO 		<= 1'b0;
+				LD_MINS_IR 	<= 1'b0;
+				LD_IR_PC 	<= 1'b0;
+				LOAD_VECT 	<= 9'b0_0010_0010;
+				INC_PC 		<= 1'b0;
+				CLEAR_VECT 	<= 6'b00_0000;
+				AMUX 			<= 3'd4;
+				BMUX 			<= 3'd3;
+				ALU_OP 		<= 3'd2;
+				PASS_AC 		<= 1'b1;
+				PASS_IR 		<= 1'b0;
+				END_FLAG 	<= 1'b0;
+				
+				state <= FETCH1;
+			end
+			
+			SHFT1: begin
+				RD_M_INS 	<= 1'b0;
+				RD_MI 		<= 1'b0;
+				WR_MO 		<= 1'b0;
+				LD_MINS_IR 	<= 1'b0;
+				LD_IR_PC 	<= 1'b0;
+				LOAD_VECT 	<= 9'b0_0000_0010;
+				INC_PC 		<= 1'b0;
+				CLEAR_VECT 	<= 6'b00_0000;
+				AMUX 			<= 3'd0;
+				BMUX 			<= 3'd4;
+				ALU_OP 		<= 3'd6;
+				PASS_AC 		<= 1'b0;
+				PASS_IR 		<= 1'b0;
+				END_FLAG 	<= 1'b0;
+				
+				state <= FETCH1;
+			end
+			
+			SHFT2: begin
+				RD_M_INS 	<= 1'b0;
+				RD_MI 		<= 1'b0;
+				WR_MO 		<= 1'b0;
+				LD_MINS_IR 	<= 1'b0;
+				LD_IR_PC 	<= 1'b0;
+				LOAD_VECT 	<= 9'b0_0000_0010;
+				INC_PC 		<= 1'b0;
+				CLEAR_VECT 	<= 6'b00_0000;
+				AMUX 			<= 3'd0;
+				BMUX 			<= 3'd4;
+				ALU_OP 		<= 3'd7;
+				PASS_AC 		<= 1'b0;
+				PASS_IR 		<= 1'b0;
+				END_FLAG 	<= 1'b0;
+				
+				state <= FETCH1;
+			end
+			
+			JUMP1: begin
+				RD_M_INS 	<= 1'b1;
+				RD_MI 		<= 1'b0;
+				WR_MO 		<= 1'b0;
+				LD_MINS_IR 	<= 1'b0;
+				LD_IR_PC 	<= 1'b0;
+				LOAD_VECT 	<= 9'b0_0000_0000;
+				INC_PC 		<= 1'b0;
+				CLEAR_VECT 	<= 6'b00_0000;
+				AMUX 			<= 3'd0;
+				BMUX 			<= 3'd0;
+				ALU_OP 		<= 3'd0;
+				PASS_AC 		<= 1'b0;
+				PASS_IR 		<= 1'b0;
+				END_FLAG 	<= 1'b0;
+				
+				state <= JUMP2;
+			end
+			
+			JUMP2: begin
+				RD_M_INS 	<= 1'b1;
+				RD_MI 		<= 1'b0;
+				WR_MO 		<= 1'b0;
+				LD_MINS_IR 	<= 1'b1;
+				LD_IR_PC 	<= 1'b1;
+				LOAD_VECT 	<= 9'b0_0000_0000;
+				INC_PC 		<= 1'b0;
+				CLEAR_VECT 	<= 6'b00_0000;
+				AMUX 			<= 3'd0;
+				BMUX 			<= 3'd0;
+				ALU_OP 		<= 3'd0;
+				PASS_AC 		<= 1'b0;
+				PASS_IR 		<= 1'b1;
+				END_FLAG 	<= 1'b0;
+				
+				state <= FETCH1;
+			end
+			
+			JMPZ1: begin
+				if (Z == 1'b1) begin
+					RD_M_INS 	<= 1'b1;
+					RD_MI 		<= 1'b0;
+					WR_MO 		<= 1'b0;
+					LD_MINS_IR 	<= 1'b0;
+					LD_IR_PC 	<= 1'b0;
+					LOAD_VECT 	<= 9'b0_0000_0000;
+					INC_PC 		<= 1'b0;
+					CLEAR_VECT 	<= 6'b00_0000;
+					AMUX 			<= 3'd0;
+					BMUX 			<= 3'd0;
+					ALU_OP 		<= 3'd0;
+					PASS_AC 		<= 1'b0;
+					PASS_IR 		<= 1'b0;
+					END_FLAG 	<= 1'b0;
+					
+					state <= JMPZ2;
+				end
+				else begin
+					RD_M_INS 	<= 1'b0;
+					RD_MI 		<= 1'b0;
+					WR_MO 		<= 1'b0;
+					LD_MINS_IR 	<= 1'b0;
+					LD_IR_PC 	<= 1'b0;
+					LOAD_VECT 	<= 9'b0_0000_0000;
+					INC_PC 		<= 1'b1;
+					CLEAR_VECT 	<= 6'b00_0000;
+					AMUX 			<= 3'd0;
+					BMUX 			<= 3'd0;
+					ALU_OP 		<= 3'd0;
+					PASS_AC 		<= 1'b0;
+					PASS_IR 		<= 1'b0;
+					END_FLAG 	<= 1'b0;
+					
+					state <= FETCH1;
+				end
+			end
+			
+			JMPZ2: begin
+				RD_M_INS 	<= 1'b1;
+				RD_MI 		<= 1'b0;
+				WR_MO 		<= 1'b0;
+				LD_MINS_IR 	<= 1'b1;
+				LD_IR_PC 	<= 1'b1;
+				LOAD_VECT 	<= 9'b0_0000_0000;
+				INC_PC 		<= 1'b0;
+				CLEAR_VECT 	<= 6'b00_0000;
+				AMUX 			<= 3'd0;
+				BMUX 			<= 3'd0;
+				ALU_OP 		<= 3'd0;
+				PASS_AC 		<= 1'b0;
+				PASS_IR 		<= 1'b1;
+				END_FLAG 	<= 1'b0;
+				
+				state <= FETCH1;
+			end
+			
+			JMPSP1: begin
+				if (Z1 == 1'b1) begin
+					RD_M_INS 	<= 1'b1;
+					RD_MI 		<= 1'b0;
+					WR_MO 		<= 1'b0;
+					LD_MINS_IR 	<= 1'b0;
+					LD_IR_PC 	<= 1'b0;
+					LOAD_VECT 	<= 9'b0_0000_0000;
+					INC_PC 		<= 1'b0;
+					CLEAR_VECT 	<= 6'b00_0000;
+					AMUX 			<= 3'd0;
+					BMUX 			<= 3'd0;
+					ALU_OP 		<= 3'd0;
+					PASS_AC 		<= 1'b0;
+					PASS_IR 		<= 1'b0;
+					END_FLAG 	<= 1'b0;
+					
+					state <= JMPSP2;
+				end
+				else begin
+					RD_M_INS 	<= 1'b0;
+					RD_MI 		<= 1'b0;
+					WR_MO 		<= 1'b0;
+					LD_MINS_IR 	<= 1'b0;
+					LD_IR_PC 	<= 1'b0;
+					LOAD_VECT 	<= 9'b0_0000_0000;
+					INC_PC 		<= 1'b1;
+					CLEAR_VECT 	<= 6'b00_0000;
+					AMUX 			<= 3'd0;
+					BMUX 			<= 3'd0;
+					ALU_OP 		<= 3'd0;
+					PASS_AC 		<= 1'b0;
+					PASS_IR 		<= 1'b0;
+					END_FLAG 	<= 1'b0;
+					
+					state <= FETCH1;
+				end
+			end
+			
+			JMPSP2: begin
+				RD_M_INS 	<= 1'b1;
+				RD_MI 		<= 1'b0;
+				WR_MO 		<= 1'b0;
+				LD_MINS_IR 	<= 1'b1;
+				LD_IR_PC 	<= 1'b1;
+				LOAD_VECT 	<= 9'b0_0000_0000;
+				INC_PC 		<= 1'b0;
+				CLEAR_VECT 	<= 6'b00_0000;
+				AMUX 			<= 3'd0;
+				BMUX 			<= 3'd0;
+				ALU_OP 		<= 3'd0;
+				PASS_AC 		<= 1'b0;
+				PASS_IR 		<= 1'b1;
+				END_FLAG 	<= 1'b0;
+				
+				state <= FETCH1;
+			end
+			
+			END: begin
+				RD_M_INS 	<= 1'b0;
+				RD_MI 		<= 1'b0;
+				WR_MO 		<= 1'b0;
+				LD_MINS_IR 	<= 1'b0;
+				LD_IR_PC 	<= 1'b0;
+				LOAD_VECT 	<= 9'b0_0000_0000;
+				INC_PC 		<= 1'b0;
+				CLEAR_VECT 	<= 6'b00_0000;
+				AMUX 			<= 3'd0;
+				BMUX 			<= 3'd0;
+				ALU_OP 		<= 3'd0;
+				PASS_AC 		<= 1'b0;
+				PASS_IR 		<= 1'b0;
+				END_FLAG 	<= 1'b1;
+				
+				state <= END2;
+			end
+			
+			END2: begin
+				state <= START;
+			end
+			
+			/*FETCH1: begin
+				RD_M_INS 	<= 1'b0;
+				RD_MI 		<= 1'b0;
+				WR_MO 		<= 1'b0;
+				LD_MINS_IR 	<= 1'b0;
+				LD_IR_PC 	<= 1'b0;
+				LOAD_VECT 	<= 9'b0_0000_0000;
+				INC_PC 		<= 1'b0;
+				CLEAR_VECT 	<= 6'b00_0000;
+				AMUX 			<= 3'd0;
+				BMUX 			<= 3'd0;
+				ALU_OP 		<= 3'd0;
+				PASS_AC 		<= 1'b0;
+				PASS_IR 		<= 1'b0;
+				END_FLAG 	<= 1'b0;
+				
+				state <= FETCH1;
+			end*/
+			
+			default: begin
+				state <= START;
+			end
+		endcase
+	end
+	
+	registerIR IR(clk, LD_MINS_IR, CLR_IR, PASS_IR, M_INS_DATA, IR_PC_DATA);
+	registerPC PC(clk, LD_IR_PC, CLR_PC, INC_PC, IR_PC_DATA, M_INS_ADD);
+endmodule

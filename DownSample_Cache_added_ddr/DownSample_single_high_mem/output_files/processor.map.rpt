@@ -1,0 +1,1279 @@
+Analysis & Synthesis report for processor
+Sun Jul 30 10:48:08 2017
+Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. State Machine - |top_mod|UART_FSM:uart_fsm1|ram_sel
+ 10. State Machine - |top_mod|UART_FSM:uart_fsm1|mode
+ 11. State Machine - |top_mod|UART_FSM:uart_fsm1|next_state
+ 12. State Machine - |top_mod|UART_FSM:uart_fsm1|curr_state
+ 13. State Machine - |top_mod|UART_FSM:uart_fsm1|uart:uart1|receiver:uart_rx|state
+ 14. State Machine - |top_mod|UART_FSM:uart_fsm1|uart:uart1|transmitter:uart_tx|state
+ 15. State Machine - |top_mod|memory_unit:mu1|CacheTop:CacheModule|FSMControl:FSMControl|state
+ 16. Logic Cells Representing Combinational Loops
+ 17. Registers Removed During Synthesis
+ 18. General Register Statistics
+ 19. Inverted Register Statistics
+ 20. Registers Packed Into Inferred Megafunctions
+ 21. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 22. Source assignments for memory_unit:mu1|ins_ram:M_INS|altsyncram:ram_rtl_0|altsyncram_veq1:auto_generated
+ 23. Source assignments for memory_unit:mu1|img_in_ddr:MI_IMG|altsyncram:ram_rtl_0|altsyncram_sgr1:auto_generated
+ 24. Parameter Settings for User Entity Instance: Top-level Entity: |top_mod
+ 25. Parameter Settings for User Entity Instance: processor:cpu1|datapath:DP1|ALU:ALU
+ 26. Parameter Settings for User Entity Instance: processor:cpu1|control_unit:CU1
+ 27. Parameter Settings for User Entity Instance: memory_unit:mu1|img_in_ddr:MI_IMG
+ 28. Parameter Settings for User Entity Instance: memory_unit:mu1|CacheTop:CacheModule
+ 29. Parameter Settings for User Entity Instance: memory_unit:mu1|CacheTop:CacheModule|FSMControl:FSMControl
+ 30. Parameter Settings for User Entity Instance: memory_unit:mu1|CacheTop:CacheModule|TagRam:TagRam
+ 31. Parameter Settings for User Entity Instance: memory_unit:mu1|CacheTop:CacheModule|Validcache:Validcache
+ 32. Parameter Settings for User Entity Instance: memory_unit:mu1|CacheTop:CacheModule|CacheDataRam:CacheDataRam1
+ 33. Parameter Settings for User Entity Instance: memory_unit:mu1|CacheTop:CacheModule|CacheAddressMux:CacheAddressMux
+ 34. Parameter Settings for User Entity Instance: memory_unit:mu1|CacheTop:CacheModule|DoutMux:DoutMux
+ 35. Parameter Settings for User Entity Instance: memory_unit:mu1|CacheTop:CacheModule|Compare:Compare
+ 36. Parameter Settings for User Entity Instance: UART_FSM:uart_fsm1
+ 37. Parameter Settings for User Entity Instance: UART_FSM:uart_fsm1|uart:uart1|baud_rate_gen:uart_baud
+ 38. Parameter Settings for User Entity Instance: UART_FSM:uart_fsm1|uart:uart1|transmitter:uart_tx
+ 39. Parameter Settings for User Entity Instance: UART_FSM:uart_fsm1|uart:uart1|receiver:uart_rx
+ 40. Parameter Settings for Inferred Entity Instance: memory_unit:mu1|ins_ram:M_INS|altsyncram:ram_rtl_0
+ 41. Parameter Settings for Inferred Entity Instance: memory_unit:mu1|img_in_ddr:MI_IMG|altsyncram:ram_rtl_0
+ 42. altsyncram Parameter Settings by Entity Instance
+ 43. Port Connectivity Checks: "memory_unit:mu1|CacheTop:CacheModule"
+ 44. Elapsed Time Per Partition
+ 45. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                    ;
++------------------------------------+--------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sun Jul 30 10:48:07 2017      ;
+; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
+; Revision Name                      ; processor                                  ;
+; Top-level Entity Name              ; top_mod                                    ;
+; Family                             ; Cyclone IV E                               ;
+; Total logic elements               ; 21,237                                     ;
+;     Total combinational functions  ; 10,536                                     ;
+;     Dedicated logic registers      ; 11,339                                     ;
+; Total registers                    ; 11339                                      ;
+; Total pins                         ; 6                                          ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 2,107,400                                  ;
+; Embedded Multiplier 9-bit elements ; 0                                          ;
+; Total PLLs                         ; 0                                          ;
++------------------------------------+--------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                                      ; top_mod            ; processor          ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                   ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                               ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------------------------+---------+
+; TagRam.v                         ; yes             ; User Verilog HDL File        ; D:/PROCESSOR FINAL/DownSample_Cache_added_ddr/DownSample_Cache_added_ddr/DownSample_single_high_mem/TagRam.v               ;         ;
+; Validcache.v                     ; yes             ; User Verilog HDL File        ; D:/PROCESSOR FINAL/DownSample_Cache_added_ddr/DownSample_Cache_added_ddr/DownSample_single_high_mem/Validcache.v           ;         ;
+; Compare.v                        ; yes             ; User Verilog HDL File        ; D:/PROCESSOR FINAL/DownSample_Cache_added_ddr/DownSample_Cache_added_ddr/DownSample_single_high_mem/Compare.v              ;         ;
+; CacheDataRam.v                   ; yes             ; User Verilog HDL File        ; D:/PROCESSOR FINAL/DownSample_Cache_added_ddr/DownSample_Cache_added_ddr/DownSample_single_high_mem/CacheDataRam.v         ;         ;
+; DoutMux.v                        ; yes             ; User Verilog HDL File        ; D:/PROCESSOR FINAL/DownSample_Cache_added_ddr/DownSample_Cache_added_ddr/DownSample_single_high_mem/DoutMux.v              ;         ;
+; CacheAddressMux.v                ; yes             ; User Verilog HDL File        ; D:/PROCESSOR FINAL/DownSample_Cache_added_ddr/DownSample_Cache_added_ddr/DownSample_single_high_mem/CacheAddressMux.v      ;         ;
+; FSMControl.v                     ; yes             ; User Verilog HDL File        ; D:/PROCESSOR FINAL/DownSample_Cache_added_ddr/DownSample_Cache_added_ddr/DownSample_single_high_mem/FSMControl.v           ;         ;
+; uart.v                           ; yes             ; User Verilog HDL File        ; D:/PROCESSOR FINAL/DownSample_Cache_added_ddr/DownSample_Cache_added_ddr/DownSample_single_high_mem/uart.v                 ;         ;
+; transmitter.v                    ; yes             ; User Verilog HDL File        ; D:/PROCESSOR FINAL/DownSample_Cache_added_ddr/DownSample_Cache_added_ddr/DownSample_single_high_mem/transmitter.v          ;         ;
+; receiver.v                       ; yes             ; User Verilog HDL File        ; D:/PROCESSOR FINAL/DownSample_Cache_added_ddr/DownSample_Cache_added_ddr/DownSample_single_high_mem/receiver.v             ;         ;
+; baud_rate_gen.v                  ; yes             ; User Verilog HDL File        ; D:/PROCESSOR FINAL/DownSample_Cache_added_ddr/DownSample_Cache_added_ddr/DownSample_single_high_mem/baud_rate_gen.v        ;         ;
+; UART_FSM.v                       ; yes             ; User Verilog HDL File        ; D:/PROCESSOR FINAL/DownSample_Cache_added_ddr/DownSample_Cache_added_ddr/DownSample_single_high_mem/UART_FSM.v             ;         ;
+; register8.v                      ; yes             ; User Verilog HDL File        ; D:/PROCESSOR FINAL/DownSample_Cache_added_ddr/DownSample_Cache_added_ddr/DownSample_single_high_mem/register8.v            ;         ;
+; control_unit.v                   ; yes             ; User Verilog HDL File        ; D:/PROCESSOR FINAL/DownSample_Cache_added_ddr/DownSample_Cache_added_ddr/DownSample_single_high_mem/control_unit.v         ;         ;
+; register19.v                     ; yes             ; User Verilog HDL File        ; D:/PROCESSOR FINAL/DownSample_Cache_added_ddr/DownSample_Cache_added_ddr/DownSample_single_high_mem/register19.v           ;         ;
+; register12.v                     ; yes             ; User Verilog HDL File        ; D:/PROCESSOR FINAL/DownSample_Cache_added_ddr/DownSample_Cache_added_ddr/DownSample_single_high_mem/register12.v           ;         ;
+; datapath.v                       ; yes             ; User Verilog HDL File        ; D:/PROCESSOR FINAL/DownSample_Cache_added_ddr/DownSample_Cache_added_ddr/DownSample_single_high_mem/datapath.v             ;         ;
+; Bmux.v                           ; yes             ; User Verilog HDL File        ; D:/PROCESSOR FINAL/DownSample_Cache_added_ddr/DownSample_Cache_added_ddr/DownSample_single_high_mem/Bmux.v                 ;         ;
+; Amux.v                           ; yes             ; User Verilog HDL File        ; D:/PROCESSOR FINAL/DownSample_Cache_added_ddr/DownSample_Cache_added_ddr/DownSample_single_high_mem/Amux.v                 ;         ;
+; ALU.v                            ; yes             ; User Verilog HDL File        ; D:/PROCESSOR FINAL/DownSample_Cache_added_ddr/DownSample_Cache_added_ddr/DownSample_single_high_mem/ALU.v                  ;         ;
+; processor.v                      ; yes             ; User Verilog HDL File        ; D:/PROCESSOR FINAL/DownSample_Cache_added_ddr/DownSample_Cache_added_ddr/DownSample_single_high_mem/processor.v            ;         ;
+; memory_unit.v                    ; yes             ; User Verilog HDL File        ; D:/PROCESSOR FINAL/DownSample_Cache_added_ddr/DownSample_Cache_added_ddr/DownSample_single_high_mem/memory_unit.v          ;         ;
+; ins_ram.v                        ; yes             ; User Verilog HDL File        ; D:/PROCESSOR FINAL/DownSample_Cache_added_ddr/DownSample_Cache_added_ddr/DownSample_single_high_mem/ins_ram.v              ;         ;
+; top_mod.v                        ; yes             ; User Verilog HDL File        ; D:/PROCESSOR FINAL/DownSample_Cache_added_ddr/DownSample_Cache_added_ddr/DownSample_single_high_mem/top_mod.v              ;         ;
+; img_in_ddr.v                     ; yes             ; User Verilog HDL File        ; D:/PROCESSOR FINAL/DownSample_Cache_added_ddr/DownSample_Cache_added_ddr/DownSample_single_high_mem/img_in_ddr.v           ;         ;
+; CacheTop.v                       ; yes             ; User Verilog HDL File        ; D:/PROCESSOR FINAL/DownSample_Cache_added_ddr/DownSample_Cache_added_ddr/DownSample_single_high_mem/CacheTop.v             ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/altsyncram.tdf                                                              ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/stratix_ram_block.inc                                                       ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_mux.inc                                                                 ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_decode.inc                                                              ;         ;
+; aglobal130.inc                   ; yes             ; Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/aglobal130.inc                                                              ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/a_rdenreg.inc                                                               ;         ;
+; altrom.inc                       ; yes             ; Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/altrom.inc                                                                  ;         ;
+; altram.inc                       ; yes             ; Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/altram.inc                                                                  ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/altdpram.inc                                                                ;         ;
+; db/altsyncram_veq1.tdf           ; yes             ; Auto-Generated Megafunction  ; D:/PROCESSOR FINAL/DownSample_Cache_added_ddr/DownSample_Cache_added_ddr/DownSample_single_high_mem/db/altsyncram_veq1.tdf ;         ;
+; db/altsyncram_sgr1.tdf           ; yes             ; Auto-Generated Megafunction  ; D:/PROCESSOR FINAL/DownSample_Cache_added_ddr/DownSample_Cache_added_ddr/DownSample_single_high_mem/db/altsyncram_sgr1.tdf ;         ;
+; db/decode_cua.tdf                ; yes             ; Auto-Generated Megafunction  ; D:/PROCESSOR FINAL/DownSample_Cache_added_ddr/DownSample_Cache_added_ddr/DownSample_single_high_mem/db/decode_cua.tdf      ;         ;
+; db/mux_sob.tdf                   ; yes             ; Auto-Generated Megafunction  ; D:/PROCESSOR FINAL/DownSample_Cache_added_ddr/DownSample_Cache_added_ddr/DownSample_single_high_mem/db/mux_sob.tdf         ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 21,237    ;
+;                                             ;           ;
+; Total combinational functions               ; 10536     ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 8735      ;
+;     -- 3 input functions                    ; 814       ;
+;     -- <=2 input functions                  ; 987       ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 10380     ;
+;     -- arithmetic mode                      ; 156       ;
+;                                             ;           ;
+; Total registers                             ; 11339     ;
+;     -- Dedicated logic registers            ; 11339     ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 6         ;
+; Total memory bits                           ; 2107400   ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 11611     ;
+; Total fan-out                               ; 81351     ;
+; Average fan-out                             ; 3.67      ;
++---------------------------------------------+-----------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                         ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                               ; Library Name ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------+--------------+
+; |top_mod                                     ; 10536 (1)         ; 11339 (0)    ; 2107400     ; 0            ; 0       ; 0         ; 6    ; 0            ; |top_mod                                                                                                          ;              ;
+;    |UART_FSM:uart_fsm1|                      ; 302 (201)         ; 236 (178)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_mod|UART_FSM:uart_fsm1                                                                                       ;              ;
+;       |uart:uart1|                           ; 101 (0)           ; 58 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_mod|UART_FSM:uart_fsm1|uart:uart1                                                                            ;              ;
+;          |baud_rate_gen:uart_baud|           ; 30 (30)           ; 14 (14)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_mod|UART_FSM:uart_fsm1|uart:uart1|baud_rate_gen:uart_baud                                                    ;              ;
+;          |receiver:uart_rx|                  ; 50 (50)           ; 28 (28)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_mod|UART_FSM:uart_fsm1|uart:uart1|receiver:uart_rx                                                           ;              ;
+;          |transmitter:uart_tx|               ; 21 (21)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_mod|UART_FSM:uart_fsm1|uart:uart1|transmitter:uart_tx                                                        ;              ;
+;    |memory_unit:mu1|                         ; 9645 (19)         ; 10928 (0)    ; 2107400     ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_mod|memory_unit:mu1                                                                                          ;              ;
+;       |CacheTop:CacheModule|                 ; 9004 (0)          ; 10856 (0)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_mod|memory_unit:mu1|CacheTop:CacheModule                                                                     ;              ;
+;          |CacheAddressMux:CacheAddressMux|   ; 10 (10)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_mod|memory_unit:mu1|CacheTop:CacheModule|CacheAddressMux:CacheAddressMux                                     ;              ;
+;          |CacheDataRam:CacheDataRam1|        ; 6561 (6561)       ; 8200 (8200)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_mod|memory_unit:mu1|CacheTop:CacheModule|CacheDataRam:CacheDataRam1                                          ;              ;
+;          |Compare:Compare|                   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_mod|memory_unit:mu1|CacheTop:CacheModule|Compare:Compare                                                     ;              ;
+;          |FSMControl:FSMControl|             ; 61 (61)           ; 86 (86)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_mod|memory_unit:mu1|CacheTop:CacheModule|FSMControl:FSMControl                                               ;              ;
+;          |TagRam:TagRam|                     ; 1818 (1818)       ; 2313 (2313)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_mod|memory_unit:mu1|CacheTop:CacheModule|TagRam:TagRam                                                       ;              ;
+;          |Validcache:Validcache|             ; 553 (553)         ; 257 (257)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_mod|memory_unit:mu1|CacheTop:CacheModule|Validcache:Validcache                                               ;              ;
+;       |img_in_ddr:MI_IMG|                    ; 622 (45)          ; 72 (60)      ; 2105352     ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_mod|memory_unit:mu1|img_in_ddr:MI_IMG                                                                        ;              ;
+;          |altsyncram:ram_rtl_0|              ; 577 (0)           ; 12 (0)       ; 2105352     ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_mod|memory_unit:mu1|img_in_ddr:MI_IMG|altsyncram:ram_rtl_0                                                   ;              ;
+;             |altsyncram_sgr1:auto_generated| ; 577 (0)           ; 12 (12)      ; 2105352     ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_mod|memory_unit:mu1|img_in_ddr:MI_IMG|altsyncram:ram_rtl_0|altsyncram_sgr1:auto_generated                    ;              ;
+;                |decode_cua:decode2|          ; 38 (38)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_mod|memory_unit:mu1|img_in_ddr:MI_IMG|altsyncram:ram_rtl_0|altsyncram_sgr1:auto_generated|decode_cua:decode2 ;              ;
+;                |decode_cua:decode3|          ; 44 (44)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_mod|memory_unit:mu1|img_in_ddr:MI_IMG|altsyncram:ram_rtl_0|altsyncram_sgr1:auto_generated|decode_cua:decode3 ;              ;
+;                |mux_sob:mux4|                ; 278 (278)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_mod|memory_unit:mu1|img_in_ddr:MI_IMG|altsyncram:ram_rtl_0|altsyncram_sgr1:auto_generated|mux_sob:mux4       ;              ;
+;                |mux_sob:mux5|                ; 217 (217)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_mod|memory_unit:mu1|img_in_ddr:MI_IMG|altsyncram:ram_rtl_0|altsyncram_sgr1:auto_generated|mux_sob:mux5       ;              ;
+;       |ins_ram:M_INS|                        ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_mod|memory_unit:mu1|ins_ram:M_INS                                                                            ;              ;
+;          |altsyncram:ram_rtl_0|              ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_mod|memory_unit:mu1|ins_ram:M_INS|altsyncram:ram_rtl_0                                                       ;              ;
+;             |altsyncram_veq1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_mod|memory_unit:mu1|ins_ram:M_INS|altsyncram:ram_rtl_0|altsyncram_veq1:auto_generated                        ;              ;
+;    |processor:cpu1|                          ; 588 (0)           ; 175 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_mod|processor:cpu1                                                                                           ;              ;
+;       |control_unit:CU1|                     ; 123 (98)          ; 58 (42)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_mod|processor:cpu1|control_unit:CU1                                                                          ;              ;
+;          |registerIR:IR|                     ; 9 (9)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_mod|processor:cpu1|control_unit:CU1|registerIR:IR                                                            ;              ;
+;          |registerPC:PC|                     ; 16 (16)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_mod|processor:cpu1|control_unit:CU1|registerPC:PC                                                            ;              ;
+;       |datapath:DP1|                         ; 465 (0)           ; 117 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_mod|processor:cpu1|datapath:DP1                                                                              ;              ;
+;          |ALU:ALU|                           ; 184 (184)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_mod|processor:cpu1|datapath:DP1|ALU:ALU                                                                      ;              ;
+;          |Amux:AMUX|                         ; 37 (37)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_mod|processor:cpu1|datapath:DP1|Amux:AMUX                                                                    ;              ;
+;          |Bmux:bmuxtb|                       ; 66 (66)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_mod|processor:cpu1|datapath:DP1|Bmux:bmuxtb                                                                  ;              ;
+;          |register12:RH|                     ; 0 (0)             ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_mod|processor:cpu1|datapath:DP1|register12:RH                                                                ;              ;
+;          |register12:RI|                     ; 14 (14)           ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_mod|processor:cpu1|datapath:DP1|register12:RI                                                                ;              ;
+;          |register12:RJ|                     ; 14 (14)           ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_mod|processor:cpu1|datapath:DP1|register12:RJ                                                                ;              ;
+;          |register12:RS|                     ; 13 (13)           ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_mod|processor:cpu1|datapath:DP1|register12:RS                                                                ;              ;
+;          |register12:RW|                     ; 0 (0)             ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_mod|processor:cpu1|datapath:DP1|register12:RW                                                                ;              ;
+;          |register19:RK|                     ; 23 (23)           ; 19 (19)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_mod|processor:cpu1|datapath:DP1|register19:RK                                                                ;              ;
+;          |register19:RX|                     ; 23 (23)           ; 19 (19)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_mod|processor:cpu1|datapath:DP1|register19:RX                                                                ;              ;
+;          |registerAC:AC|                     ; 91 (91)           ; 19 (19)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_mod|processor:cpu1|datapath:DP1|registerAC:AC                                                                ;              ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                      ;
++--------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+---------+------+
+; Name                                                                                             ; Type ; Mode           ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size    ; MIF  ;
++--------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+---------+------+
+; memory_unit:mu1|img_in_ddr:MI_IMG|altsyncram:ram_rtl_0|altsyncram_sgr1:auto_generated|ALTSYNCRAM ; AUTO ; True Dual Port ; 263169       ; 8            ; 263169       ; 8            ; 2105352 ; None ;
+; memory_unit:mu1|ins_ram:M_INS|altsyncram:ram_rtl_0|altsyncram_veq1:auto_generated|ALTSYNCRAM     ; AUTO ; True Dual Port ; 256          ; 8            ; 256          ; 8            ; 2048    ; None ;
++--------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+---------+------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------+
+; State Machine - |top_mod|UART_FSM:uart_fsm1|ram_sel ;
++--------------------+--------------------------------+
+; Name               ; ram_sel.INS_RAM                ;
++--------------------+--------------------------------+
+; ram_sel.IMG_IN_RAM ; 0                              ;
+; ram_sel.INS_RAM    ; 1                              ;
++--------------------+--------------------------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------+
+; State Machine - |top_mod|UART_FSM:uart_fsm1|mode        ;
++--------------+--------------+-------------+-------------+
+; Name         ; mode.CMD_DEC ; mode.CMD_TX ; mode.CMD_RX ;
++--------------+--------------+-------------+-------------+
+; mode.CMD_DEC ; 0            ; 0           ; 0           ;
+; mode.CMD_RX  ; 1            ; 0           ; 1           ;
+; mode.CMD_TX  ; 1            ; 1           ; 0           ;
++--------------+--------------+-------------+-------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |top_mod|UART_FSM:uart_fsm1|next_state                                                                                                 ;
++---------------------------+----------------------+----------------------+----------------------+---------------------------+---------------------------+
+; Name                      ; next_state.STATE_RX3 ; next_state.STATE_RX2 ; next_state.STATE_RX1 ; next_state.STATE_CHECK_RX ; next_state.STATE_RX_DATA1 ;
++---------------------------+----------------------+----------------------+----------------------+---------------------------+---------------------------+
+; next_state.STATE_CHECK_RX ; 0                    ; 0                    ; 0                    ; 0                         ; 0                         ;
+; next_state.STATE_RX1      ; 0                    ; 0                    ; 1                    ; 1                         ; 0                         ;
+; next_state.STATE_RX2      ; 0                    ; 1                    ; 0                    ; 1                         ; 0                         ;
+; next_state.STATE_RX3      ; 1                    ; 0                    ; 0                    ; 1                         ; 0                         ;
+; next_state.STATE_RX_DATA1 ; 0                    ; 0                    ; 0                    ; 1                         ; 1                         ;
++---------------------------+----------------------+----------------------+----------------------+---------------------------+---------------------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |top_mod|UART_FSM:uart_fsm1|curr_state                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ;
++---------------------------+-----------------------+-----------------------+-----------------------+-------------------------+-------------------------+--------------------------+---------------------------+---------------------------+---------------------------+---------------------------+----------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+----------------------+----------------------+----------------------+---------------------------+
+; Name                      ; curr_state.STATE_END3 ; curr_state.STATE_END2 ; curr_state.STATE_END1 ; curr_state.STATE_START2 ; curr_state.STATE_START1 ; curr_state.STATE_TX_BUSY ; curr_state.STATE_TX_DATA4 ; curr_state.STATE_TX_DATA3 ; curr_state.STATE_TX_DATA2 ; curr_state.STATE_TX_DATA1 ; curr_state.STATE_TX1 ; curr_state.STATE_RX_DATA5 ; curr_state.STATE_RX_DATA4 ; curr_state.STATE_RX_DATA3 ; curr_state.STATE_RX_DATA2 ; curr_state.STATE_RX_DATA1 ; curr_state.STATE_RX3 ; curr_state.STATE_RX2 ; curr_state.STATE_RX1 ; curr_state.STATE_CHECK_RX ;
++---------------------------+-----------------------+-----------------------+-----------------------+-------------------------+-------------------------+--------------------------+---------------------------+---------------------------+---------------------------+---------------------------+----------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+----------------------+----------------------+----------------------+---------------------------+
+; curr_state.STATE_CHECK_RX ; 0                     ; 0                     ; 0                     ; 0                       ; 0                       ; 0                        ; 0                         ; 0                         ; 0                         ; 0                         ; 0                    ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                    ; 0                    ; 0                    ; 0                         ;
+; curr_state.STATE_RX1      ; 0                     ; 0                     ; 0                     ; 0                       ; 0                       ; 0                        ; 0                         ; 0                         ; 0                         ; 0                         ; 0                    ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                    ; 0                    ; 1                    ; 1                         ;
+; curr_state.STATE_RX2      ; 0                     ; 0                     ; 0                     ; 0                       ; 0                       ; 0                        ; 0                         ; 0                         ; 0                         ; 0                         ; 0                    ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                    ; 1                    ; 0                    ; 1                         ;
+; curr_state.STATE_RX3      ; 0                     ; 0                     ; 0                     ; 0                       ; 0                       ; 0                        ; 0                         ; 0                         ; 0                         ; 0                         ; 0                    ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 1                    ; 0                    ; 0                    ; 1                         ;
+; curr_state.STATE_RX_DATA1 ; 0                     ; 0                     ; 0                     ; 0                       ; 0                       ; 0                        ; 0                         ; 0                         ; 0                         ; 0                         ; 0                    ; 0                         ; 0                         ; 0                         ; 0                         ; 1                         ; 0                    ; 0                    ; 0                    ; 1                         ;
+; curr_state.STATE_RX_DATA2 ; 0                     ; 0                     ; 0                     ; 0                       ; 0                       ; 0                        ; 0                         ; 0                         ; 0                         ; 0                         ; 0                    ; 0                         ; 0                         ; 0                         ; 1                         ; 0                         ; 0                    ; 0                    ; 0                    ; 1                         ;
+; curr_state.STATE_RX_DATA3 ; 0                     ; 0                     ; 0                     ; 0                       ; 0                       ; 0                        ; 0                         ; 0                         ; 0                         ; 0                         ; 0                    ; 0                         ; 0                         ; 1                         ; 0                         ; 0                         ; 0                    ; 0                    ; 0                    ; 1                         ;
+; curr_state.STATE_RX_DATA4 ; 0                     ; 0                     ; 0                     ; 0                       ; 0                       ; 0                        ; 0                         ; 0                         ; 0                         ; 0                         ; 0                    ; 0                         ; 1                         ; 0                         ; 0                         ; 0                         ; 0                    ; 0                    ; 0                    ; 1                         ;
+; curr_state.STATE_RX_DATA5 ; 0                     ; 0                     ; 0                     ; 0                       ; 0                       ; 0                        ; 0                         ; 0                         ; 0                         ; 0                         ; 0                    ; 1                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                    ; 0                    ; 0                    ; 1                         ;
+; curr_state.STATE_TX1      ; 0                     ; 0                     ; 0                     ; 0                       ; 0                       ; 0                        ; 0                         ; 0                         ; 0                         ; 0                         ; 1                    ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                    ; 0                    ; 0                    ; 1                         ;
+; curr_state.STATE_TX_DATA1 ; 0                     ; 0                     ; 0                     ; 0                       ; 0                       ; 0                        ; 0                         ; 0                         ; 0                         ; 1                         ; 0                    ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                    ; 0                    ; 0                    ; 1                         ;
+; curr_state.STATE_TX_DATA2 ; 0                     ; 0                     ; 0                     ; 0                       ; 0                       ; 0                        ; 0                         ; 0                         ; 1                         ; 0                         ; 0                    ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                    ; 0                    ; 0                    ; 1                         ;
+; curr_state.STATE_TX_DATA3 ; 0                     ; 0                     ; 0                     ; 0                       ; 0                       ; 0                        ; 0                         ; 1                         ; 0                         ; 0                         ; 0                    ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                    ; 0                    ; 0                    ; 1                         ;
+; curr_state.STATE_TX_DATA4 ; 0                     ; 0                     ; 0                     ; 0                       ; 0                       ; 0                        ; 1                         ; 0                         ; 0                         ; 0                         ; 0                    ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                    ; 0                    ; 0                    ; 1                         ;
+; curr_state.STATE_TX_BUSY  ; 0                     ; 0                     ; 0                     ; 0                       ; 0                       ; 1                        ; 0                         ; 0                         ; 0                         ; 0                         ; 0                    ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                    ; 0                    ; 0                    ; 1                         ;
+; curr_state.STATE_START1   ; 0                     ; 0                     ; 0                     ; 0                       ; 1                       ; 0                        ; 0                         ; 0                         ; 0                         ; 0                         ; 0                    ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                    ; 0                    ; 0                    ; 1                         ;
+; curr_state.STATE_START2   ; 0                     ; 0                     ; 0                     ; 1                       ; 0                       ; 0                        ; 0                         ; 0                         ; 0                         ; 0                         ; 0                    ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                    ; 0                    ; 0                    ; 1                         ;
+; curr_state.STATE_END1     ; 0                     ; 0                     ; 1                     ; 0                       ; 0                       ; 0                        ; 0                         ; 0                         ; 0                         ; 0                         ; 0                    ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                    ; 0                    ; 0                    ; 1                         ;
+; curr_state.STATE_END2     ; 0                     ; 1                     ; 0                     ; 0                       ; 0                       ; 0                        ; 0                         ; 0                         ; 0                         ; 0                         ; 0                    ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                    ; 0                    ; 0                    ; 1                         ;
+; curr_state.STATE_END3     ; 1                     ; 0                     ; 0                     ; 0                       ; 0                       ; 0                        ; 0                         ; 0                         ; 0                         ; 0                         ; 0                    ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                    ; 0                    ; 0                    ; 1                         ;
++---------------------------+-----------------------+-----------------------+-----------------------+-------------------------+-------------------------+--------------------------+---------------------------+---------------------------+---------------------------+---------------------------+----------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+----------------------+----------------------+----------------------+---------------------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------+
+; State Machine - |top_mod|UART_FSM:uart_fsm1|uart:uart1|receiver:uart_rx|state           ;
++----------------------+----------------------+---------------------+---------------------+
+; Name                 ; state.RX_STATE_START ; state.RX_STATE_STOP ; state.RX_STATE_DATA ;
++----------------------+----------------------+---------------------+---------------------+
+; state.RX_STATE_START ; 0                    ; 0                   ; 0                   ;
+; state.RX_STATE_DATA  ; 1                    ; 0                   ; 1                   ;
+; state.RX_STATE_STOP  ; 1                    ; 1                   ; 0                   ;
++----------------------+----------------------+---------------------+---------------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------+
+; State Machine - |top_mod|UART_FSM:uart_fsm1|uart:uart1|transmitter:uart_tx|state               ;
++-------------------+------------------+------------------+-------------------+------------------+
+; Name              ; state.STATE_STOP ; state.STATE_DATA ; state.STATE_START ; state.STATE_IDLE ;
++-------------------+------------------+------------------+-------------------+------------------+
+; state.STATE_IDLE  ; 0                ; 0                ; 0                 ; 0                ;
+; state.STATE_START ; 0                ; 0                ; 1                 ; 1                ;
+; state.STATE_DATA  ; 0                ; 1                ; 0                 ; 1                ;
+; state.STATE_STOP  ; 1                ; 0                ; 0                 ; 1                ;
++-------------------+------------------+------------------+-------------------+------------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |top_mod|memory_unit:mu1|CacheTop:CacheModule|FSMControl:FSMControl|state                                                                  ;
++---------------------+-------------------+---------------------+---------------------+---------------------+-----------------+------------------+-----------+
+; Name                ; state.Reset_State ; state.Data_Load_3rd ; state.Data_Load_2nd ; state.Data_Load_1st ; state.Read_Wait ; state.Write_Wait ; state.000 ;
++---------------------+-------------------+---------------------+---------------------+---------------------+-----------------+------------------+-----------+
+; state.000           ; 0                 ; 0                   ; 0                   ; 0                   ; 0               ; 0                ; 0         ;
+; state.Write_Wait    ; 0                 ; 0                   ; 0                   ; 0                   ; 0               ; 1                ; 1         ;
+; state.Read_Wait     ; 0                 ; 0                   ; 0                   ; 0                   ; 1               ; 0                ; 1         ;
+; state.Data_Load_1st ; 0                 ; 0                   ; 0                   ; 1                   ; 0               ; 0                ; 1         ;
+; state.Data_Load_2nd ; 0                 ; 0                   ; 1                   ; 0                   ; 0               ; 0                ; 1         ;
+; state.Data_Load_3rd ; 0                 ; 1                   ; 0                   ; 0                   ; 0               ; 0                ; 1         ;
+; state.Reset_State   ; 1                 ; 0                   ; 0                   ; 0                   ; 0               ; 0                ; 1         ;
++---------------------+-------------------+---------------------+---------------------+---------------------+-----------------+------------------+-----------+
+
+
++---------------------------------------------------------------+
+; Logic Cells Representing Combinational Loops                  ;
++----------------------------------------------------------+----+
+; Logic Cell Name                                          ;    ;
++----------------------------------------------------------+----+
+; processor:cpu1|datapath:DP1|registerAC:AC|data_out[18]~0 ;    ;
+; rtl~63                                                   ;    ;
+; rtl~62                                                   ;    ;
+; rtl~64                                                   ;    ;
+; rtl~65                                                   ;    ;
+; rtl~60                                                   ;    ;
+; rtl~58                                                   ;    ;
+; rtl~59                                                   ;    ;
+; rtl~61                                                   ;    ;
+; rtl~55                                                   ;    ;
+; rtl~54                                                   ;    ;
+; rtl~57                                                   ;    ;
+; rtl~56                                                   ;    ;
+; rtl~51                                                   ;    ;
+; rtl~50                                                   ;    ;
+; rtl~53                                                   ;    ;
+; rtl~52                                                   ;    ;
+; rtl~47                                                   ;    ;
+; rtl~46                                                   ;    ;
+; rtl~49                                                   ;    ;
+; rtl~48                                                   ;    ;
+; rtl~43                                                   ;    ;
+; rtl~42                                                   ;    ;
+; rtl~45                                                   ;    ;
+; rtl~44                                                   ;    ;
+; rtl~39                                                   ;    ;
+; rtl~38                                                   ;    ;
+; rtl~41                                                   ;    ;
+; rtl~40                                                   ;    ;
+; rtl~35                                                   ;    ;
+; rtl~34                                                   ;    ;
+; rtl~37                                                   ;    ;
+; rtl~36                                                   ;    ;
+; rtl~30                                                   ;    ;
+; rtl~31                                                   ;    ;
+; rtl~33                                                   ;    ;
+; rtl~32                                                   ;    ;
+; rtl~26                                                   ;    ;
+; rtl~27                                                   ;    ;
+; rtl~29                                                   ;    ;
+; rtl~28                                                   ;    ;
+; rtl~22                                                   ;    ;
+; rtl~23                                                   ;    ;
+; rtl~25                                                   ;    ;
+; rtl~24                                                   ;    ;
+; rtl~18                                                   ;    ;
+; rtl~19                                                   ;    ;
+; rtl~21                                                   ;    ;
+; rtl~20                                                   ;    ;
+; rtl~14                                                   ;    ;
+; rtl~15                                                   ;    ;
+; rtl~17                                                   ;    ;
+; rtl~16                                                   ;    ;
+; rtl~10                                                   ;    ;
+; rtl~11                                                   ;    ;
+; rtl~13                                                   ;    ;
+; rtl~12                                                   ;    ;
+; rtl~6                                                    ;    ;
+; rtl~7                                                    ;    ;
+; rtl~9                                                    ;    ;
+; rtl~8                                                    ;    ;
+; processor:cpu1|datapath:DP1|Bmux:bmuxtb|Mux1~0           ;    ;
+; processor:cpu1|datapath:DP1|Bmux:bmuxtb|Mux2~0           ;    ;
+; processor:cpu1|datapath:DP1|Bmux:bmuxtb|Mux3~0           ;    ;
+; Number of logic cells representing combinational loops   ; 64 ;
++----------------------------------------------------------+----+
+Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                                    ;
++-------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+
+; Register name                                                                             ; Reason for Removal                                                                        ;
++-------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+
+; UART_FSM:uart_fsm1|output_read_img_len[20..23]                                            ; Stuck at GND due to stuck port data_in                                                    ;
+; processor:cpu1|control_unit:CU1|CLR_IR                                                    ; Merged with processor:cpu1|control_unit:CU1|CLR_PC                                        ;
+; memory_unit:mu1|CacheTop:CacheModule|FSMControl:FSMControl|Select_CacheAddrss_FSM_Address ; Merged with memory_unit:mu1|CacheTop:CacheModule|FSMControl:FSMControl|Cache_Write_Enable ;
+; memory_unit:mu1|CacheTop:CacheModule|FSMControl:FSMControl|Select_DataOut_Memory_cache    ; Merged with memory_unit:mu1|CacheTop:CacheModule|FSMControl:FSMControl|Cache_Write_Enable ;
+; processor:cpu1|control_unit:CU1|PASS_IR                                                   ; Merged with processor:cpu1|control_unit:CU1|LD_IR_PC                                      ;
+; UART_FSM:uart_fsm1|ram_sel~2                                                              ; Lost fanout                                                                               ;
+; UART_FSM:uart_fsm1|next_state~7                                                           ; Lost fanout                                                                               ;
+; UART_FSM:uart_fsm1|next_state~8                                                           ; Lost fanout                                                                               ;
+; UART_FSM:uart_fsm1|next_state~10                                                          ; Lost fanout                                                                               ;
+; UART_FSM:uart_fsm1|next_state~11                                                          ; Lost fanout                                                                               ;
+; UART_FSM:uart_fsm1|curr_state~2                                                           ; Lost fanout                                                                               ;
+; UART_FSM:uart_fsm1|curr_state~3                                                           ; Lost fanout                                                                               ;
+; UART_FSM:uart_fsm1|curr_state~4                                                           ; Lost fanout                                                                               ;
+; UART_FSM:uart_fsm1|curr_state~5                                                           ; Lost fanout                                                                               ;
+; UART_FSM:uart_fsm1|curr_state~6                                                           ; Lost fanout                                                                               ;
+; UART_FSM:uart_fsm1|uart:uart1|transmitter:uart_tx|state~5                                 ; Lost fanout                                                                               ;
+; UART_FSM:uart_fsm1|uart:uart1|transmitter:uart_tx|state~6                                 ; Lost fanout                                                                               ;
+; memory_unit:mu1|CacheTop:CacheModule|FSMControl:FSMControl|state~2                        ; Lost fanout                                                                               ;
+; memory_unit:mu1|CacheTop:CacheModule|FSMControl:FSMControl|state~3                        ; Lost fanout                                                                               ;
+; memory_unit:mu1|CacheTop:CacheModule|FSMControl:FSMControl|state~4                        ; Lost fanout                                                                               ;
+; UART_FSM:uart_fsm1|mode.CMD_RX                                                            ; Lost fanout                                                                               ;
+; UART_FSM:uart_fsm1|mode.CMD_TX                                                            ; Lost fanout                                                                               ;
+; Total Number of Removed Registers = 25                                                    ;                                                                                           ;
++-------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 11339 ;
+; Number of registers using Synchronous Clear  ; 71    ;
+; Number of registers using Synchronous Load   ; 29    ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 10882 ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------+
+; Inverted Register Statistics                                   ;
++------------------------------------------------------+---------+
+; Inverted Register                                    ; Fan out ;
++------------------------------------------------------+---------+
+; UART_FSM:uart_fsm1|uart:uart1|transmitter:uart_tx|tx ; 2       ;
+; Total number of inverted registers = 1               ;         ;
++------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions                                                     ;
++---------------------------------------------+---------------------------------------------+------+
+; Register Name                               ; Megafunction                                ; Type ;
++---------------------------------------------+---------------------------------------------+------+
+; memory_unit:mu1|ins_ram:M_INS|q_b[0..7]     ; memory_unit:mu1|ins_ram:M_INS|ram_rtl_0     ; RAM  ;
+; memory_unit:mu1|ins_ram:M_INS|q_a[0..7]     ; memory_unit:mu1|ins_ram:M_INS|ram_rtl_0     ; RAM  ;
+; memory_unit:mu1|img_in_ddr:MI_IMG|q_a[0..7] ; memory_unit:mu1|img_in_ddr:MI_IMG|ram_rtl_0 ; RAM  ;
+; memory_unit:mu1|img_in_ddr:MI_IMG|q_b[0..7] ; memory_unit:mu1|img_in_ddr:MI_IMG|ram_rtl_0 ; RAM  ;
++---------------------------------------------+---------------------------------------------+------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------+
+; 3:1                ; 19 bits   ; 38 LEs        ; 19 LEs               ; 19 LEs                 ; Yes        ; |top_mod|processor:cpu1|datapath:DP1|register19:RX|data_out[6]                                 ;
+; 3:1                ; 19 bits   ; 38 LEs        ; 19 LEs               ; 19 LEs                 ; Yes        ; |top_mod|processor:cpu1|datapath:DP1|register19:RK|data_out[12]                                ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |top_mod|processor:cpu1|control_unit:CU1|state[3]                                              ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |top_mod|processor:cpu1|datapath:DP1|register12:RS|data_out[3]                                 ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |top_mod|processor:cpu1|datapath:DP1|register12:RI|data_out[9]                                 ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |top_mod|processor:cpu1|datapath:DP1|register12:RJ|data_out[9]                                 ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |top_mod|processor:cpu1|control_unit:CU1|registerPC:PC|data_out[3]                             ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_mod|processor:cpu1|control_unit:CU1|registerIR:IR|data_out2[7]                            ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_mod|memory_unit:mu1|img_in_ddr:MI_IMG|delay_temp_we[6]                                    ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_mod|memory_unit:mu1|img_in_ddr:MI_IMG|delay_temp_re[2]                                    ;
+; 4:1                ; 11 bits   ; 22 LEs        ; 11 LEs               ; 11 LEs                 ; Yes        ; |top_mod|processor:cpu1|datapath:DP1|registerAC:AC|data_out2[9]                                ;
+; 4:1                ; 24 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |top_mod|UART_FSM:uart_fsm1|len_cnt[6]                                                         ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |top_mod|processor:cpu1|datapath:DP1|registerAC:AC|data_out2[1]                                ;
+; 5:1                ; 19 bits   ; 57 LEs        ; 0 LEs                ; 57 LEs                 ; Yes        ; |top_mod|UART_FSM:uart_fsm1|ram_addr_img_in[5]                                                 ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 0 LEs                ; 24 LEs                 ; Yes        ; |top_mod|UART_FSM:uart_fsm1|ram_ins_addr[3]                                                    ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |top_mod|UART_FSM:uart_fsm1|uart:uart1|receiver:uart_rx|bitpos[3]                              ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |top_mod|UART_FSM:uart_fsm1|ser_data_in[0]                                                     ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |top_mod|UART_FSM:uart_fsm1|uart:uart1|receiver:uart_rx|sample[3]                              ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 3 LEs                ; 9 LEs                  ; Yes        ; |top_mod|UART_FSM:uart_fsm1|uart:uart1|transmitter:uart_tx|bitpos[0]                           ;
+; 6:1                ; 10 bits   ; 40 LEs        ; 10 LEs               ; 30 LEs                 ; Yes        ; |top_mod|memory_unit:mu1|CacheTop:CacheModule|FSMControl:FSMControl|Cache_DataCache_Address[9] ;
+; 7:1                ; 19 bits   ; 76 LEs        ; 19 LEs               ; 57 LEs                 ; Yes        ; |top_mod|memory_unit:mu1|CacheTop:CacheModule|FSMControl:FSMControl|Cache_RAMportB_Address[6]  ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |top_mod|memory_unit:mu1|CacheTop:CacheModule|FSMControl:FSMControl|temp[1]                    ;
+; 257:1              ; 30 bits   ; 5130 LEs      ; 690 LEs              ; 4440 LEs               ; Yes        ; |top_mod|processor:cpu1|control_unit:CU1|LOAD_VECT[2]                                          ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |top_mod|UART_FSM:uart_fsm1|curr_state                                                         ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |top_mod|UART_FSM:uart_fsm1|curr_state                                                         ;
+; 8:1                ; 7 bits    ; 35 LEs        ; 21 LEs               ; 14 LEs                 ; No         ; |top_mod|processor:cpu1|datapath:DP1|Bmux:bmuxtb|Mux5                                          ;
+; 8:1                ; 12 bits   ; 60 LEs        ; 48 LEs               ; 12 LEs                 ; No         ; |top_mod|processor:cpu1|datapath:DP1|Bmux:bmuxtb|Mux8                                          ;
+; 8:1                ; 12 bits   ; 60 LEs        ; 48 LEs               ; 12 LEs                 ; No         ; |top_mod|processor:cpu1|datapath:DP1|Amux:AMUX|Mux0                                            ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; No         ; |top_mod|processor:cpu1|control_unit:CU1|Selector3                                             ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |top_mod|processor:cpu1|datapath:DP1|ALU:ALU|Mux2                                              ;
+; 8:1                ; 5 bits    ; 25 LEs        ; 20 LEs               ; 5 LEs                  ; No         ; |top_mod|processor:cpu1|datapath:DP1|ALU:ALU|Mux9                                              ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |top_mod|processor:cpu1|datapath:DP1|ALU:ALU|Mux12                                             ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |top_mod|UART_FSM:uart_fsm1|uart:uart1|receiver:uart_rx|state                                  ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |top_mod|UART_FSM:uart_fsm1|uart:uart1|transmitter:uart_tx|Selector1                           ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |top_mod|UART_FSM:uart_fsm1|uart:uart1|transmitter:uart_tx|Selector0                           ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |top_mod|UART_FSM:uart_fsm1|Selector6                                                          ;
+; 259:1              ; 2 bits    ; 344 LEs       ; 4 LEs                ; 340 LEs                ; No         ; |top_mod|UART_FSM:uart_fsm1|ram_sel                                                            ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |top_mod|UART_FSM:uart_fsm1|Selector15                                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Source assignments for memory_unit:mu1|ins_ram:M_INS|altsyncram:ram_rtl_0|altsyncram_veq1:auto_generated ;
++---------------------------------+--------------------+------+--------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                         ;
++---------------------------------+--------------------+------+--------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                          ;
++---------------------------------+--------------------+------+--------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Source assignments for memory_unit:mu1|img_in_ddr:MI_IMG|altsyncram:ram_rtl_0|altsyncram_sgr1:auto_generated ;
++---------------------------------+--------------------+------+------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                             ;
++---------------------------------+--------------------+------+------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                              ;
++---------------------------------+--------------------+------+------------------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |top_mod ;
++-------------------+-------+---------------------------------------------+
+; Parameter Name    ; Value ; Type                                        ;
++-------------------+-------+---------------------------------------------+
+; INS_ADDR_WIDTH    ; 8     ; Signed Integer                              ;
+; IMG_IN_ADDR_WIDTH ; 15    ; Signed Integer                              ;
++-------------------+-------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:cpu1|datapath:DP1|ALU:ALU ;
++----------------+-------+---------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                    ;
++----------------+-------+---------------------------------------------------------+
+; ADD            ; 000   ; Unsigned Binary                                         ;
+; DIV16          ; 001   ; Unsigned Binary                                         ;
+; SUB            ; 010   ; Unsigned Binary                                         ;
+; INC2           ; 011   ; Unsigned Binary                                         ;
+; INC1           ; 100   ; Unsigned Binary                                         ;
+; DEC1           ; 101   ; Unsigned Binary                                         ;
+; MUL2           ; 110   ; Unsigned Binary                                         ;
+; MUL4           ; 111   ; Unsigned Binary                                         ;
++----------------+-------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:cpu1|control_unit:CU1 ;
++----------------+----------+--------------------------------------------------+
+; Parameter Name ; Value    ; Type                                             ;
++----------------+----------+--------------------------------------------------+
+; START          ; 00000000 ; Unsigned Binary                                  ;
+; CLAC           ; 00001001 ; Unsigned Binary                                  ;
+; DIVRS1         ; 00010011 ; Unsigned Binary                                  ;
+; DECRX_W        ; 00011100 ; Unsigned Binary                                  ;
+; FETCH1         ; 00000001 ; Unsigned Binary                                  ;
+; CLRX           ; 00001010 ; Unsigned Binary                                  ;
+; SUBRHRJ        ; 00010100 ; Unsigned Binary                                  ;
+; SHFT1          ; 00011101 ; Unsigned Binary                                  ;
+; FETCH2         ; 00000010 ; Unsigned Binary                                  ;
+; CLRS           ; 00001011 ; Unsigned Binary                                  ;
+; SUBRWRI        ; 00010101 ; Unsigned Binary                                  ;
+; SHFT2          ; 00011110 ; Unsigned Binary                                  ;
+; LDACRX1        ; 00000011 ; Unsigned Binary                                  ;
+; CLRI           ; 00001100 ; Unsigned Binary                                  ;
+; INRI1          ; 00010110 ; Unsigned Binary                                  ;
+; JUMP1          ; 00011111 ; Unsigned Binary                                  ;
+; LDACRX2        ; 00000100 ; Unsigned Binary                                  ;
+; CLRJ           ; 00001101 ; Unsigned Binary                                  ;
+; INRJ1          ; 00010111 ; Unsigned Binary                                  ;
+; JUMP2          ; 00100000 ; Unsigned Binary                                  ;
+; MVACRH1        ; 00000101 ; Unsigned Binary                                  ;
+; CLRK           ; 00001110 ; Unsigned Binary                                  ;
+; INRK           ; 00011000 ; Unsigned Binary                                  ;
+; JMPZ1          ; 00100001 ; Unsigned Binary                                  ;
+; MVACRW1        ; 00000110 ; Unsigned Binary                                  ;
+; ADDRXAC1       ; 00001111 ; Unsigned Binary                                  ;
+; INRX           ; 00011001 ; Unsigned Binary                                  ;
+; JMPZ2          ; 00100010 ; Unsigned Binary                                  ;
+; STRSRK1        ; 00000111 ; Unsigned Binary                                  ;
+; ADDRXAC2       ; 00010000 ; Unsigned Binary                                  ;
+; DECRX          ; 00011010 ; Unsigned Binary                                  ;
+; JMPSP1         ; 00100011 ; Unsigned Binary                                  ;
+; STRSRK2        ; 00001000 ; Unsigned Binary                                  ;
+; ADDSUM1        ; 00010001 ; Unsigned Binary                                  ;
+; INRX_W         ; 00011011 ; Unsigned Binary                                  ;
+; JMPSP2         ; 00100100 ; Unsigned Binary                                  ;
+; ADDSUM2        ; 00010010 ; Unsigned Binary                                  ;
+; END            ; 00100101 ; Unsigned Binary                                  ;
+; END2           ; 00100110 ; Unsigned Binary                                  ;
+; SEL_OP         ; 00100111 ; Unsigned Binary                                  ;
++----------------+----------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: memory_unit:mu1|img_in_ddr:MI_IMG ;
++----------------+----------+----------------------------------------------------+
+; Parameter Name ; Value    ; Type                                               ;
++----------------+----------+----------------------------------------------------+
+; DELAY          ; 11111010 ; Unsigned Binary                                    ;
++----------------+----------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: memory_unit:mu1|CacheTop:CacheModule ;
++----------------------+-------+----------------------------------------------------+
+; Parameter Name       ; Value ; Type                                               ;
++----------------------+-------+----------------------------------------------------+
+; DATA_WIDTH           ; 8     ; Signed Integer                                     ;
+; ADDRESS_LENGTH       ; 19    ; Signed Integer                                     ;
+; TAG_LENGTH           ; 9     ; Signed Integer                                     ;
+; CASHE_ADDRESS_LENGTH ; 10    ; Signed Integer                                     ;
+; CASHE_BIT_DEPTH      ; 2     ; Signed Integer                                     ;
++----------------------+-------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: memory_unit:mu1|CacheTop:CacheModule|FSMControl:FSMControl ;
++----------------+-------+--------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                           ;
++----------------+-------+--------------------------------------------------------------------------------+
+; ADDRESS_LENGTH ; 19    ; Signed Integer                                                                 ;
++----------------+-------+--------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: memory_unit:mu1|CacheTop:CacheModule|TagRam:TagRam ;
++----------------+-------+------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                   ;
++----------------+-------+------------------------------------------------------------------------+
+; TAG_ADDR_WIDTH ; 8     ; Signed Integer                                                         ;
+; TAG_LENGTH     ; 9     ; Signed Integer                                                         ;
++----------------+-------+------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: memory_unit:mu1|CacheTop:CacheModule|Validcache:Validcache ;
++----------------+-------+--------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                           ;
++----------------+-------+--------------------------------------------------------------------------------+
+; TAG_ADDR_WIDTH ; 8     ; Signed Integer                                                                 ;
++----------------+-------+--------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: memory_unit:mu1|CacheTop:CacheModule|CacheDataRam:CacheDataRam1 ;
++-----------------+-------+------------------------------------------------------------------------------------+
+; Parameter Name  ; Value ; Type                                                                               ;
++-----------------+-------+------------------------------------------------------------------------------------+
+; DATA_WIDTH      ; 8     ; Signed Integer                                                                     ;
+; CACHE_ADDR_SIZE ; 10    ; Signed Integer                                                                     ;
++-----------------+-------+------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: memory_unit:mu1|CacheTop:CacheModule|CacheAddressMux:CacheAddressMux ;
++----------------+-------+------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                     ;
++----------------+-------+------------------------------------------------------------------------------------------+
+; ADDRESS_WIDTH  ; 10    ; Signed Integer                                                                           ;
++----------------+-------+------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: memory_unit:mu1|CacheTop:CacheModule|DoutMux:DoutMux ;
++----------------+-------+--------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                     ;
++----------------+-------+--------------------------------------------------------------------------+
+; DATA_WIDTH     ; 8     ; Signed Integer                                                           ;
++----------------+-------+--------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: memory_unit:mu1|CacheTop:CacheModule|Compare:Compare ;
++----------------+-------+--------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                     ;
++----------------+-------+--------------------------------------------------------------------------+
+; TAG_LENGTH     ; 9     ; Signed Integer                                                           ;
++----------------+-------+--------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: UART_FSM:uart_fsm1 ;
++-------------------+-------+-------------------------------------+
+; Parameter Name    ; Value ; Type                                ;
++-------------------+-------+-------------------------------------+
+; INS_ADDR_WIDTH    ; 8     ; Signed Integer                      ;
+; IMG_IN_ADDR_WIDTH ; 19    ; Signed Integer                      ;
++-------------------+-------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: UART_FSM:uart_fsm1|uart:uart1|baud_rate_gen:uart_baud ;
++----------------+-------+---------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                      ;
++----------------+-------+---------------------------------------------------------------------------+
+; RX_ACC_MAX     ; 27    ; Signed Integer                                                            ;
+; TX_ACC_MAX     ; 434   ; Signed Integer                                                            ;
+; RX_ACC_WIDTH   ; 5     ; Signed Integer                                                            ;
+; TX_ACC_WIDTH   ; 9     ; Signed Integer                                                            ;
++----------------+-------+---------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: UART_FSM:uart_fsm1|uart:uart1|transmitter:uart_tx ;
++----------------+-------+-----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                  ;
++----------------+-------+-----------------------------------------------------------------------+
+; STATE_IDLE     ; 00    ; Unsigned Binary                                                       ;
+; STATE_START    ; 01    ; Unsigned Binary                                                       ;
+; STATE_DATA     ; 10    ; Unsigned Binary                                                       ;
+; STATE_STOP     ; 11    ; Unsigned Binary                                                       ;
++----------------+-------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: UART_FSM:uart_fsm1|uart:uart1|receiver:uart_rx ;
++----------------+-------+--------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                               ;
++----------------+-------+--------------------------------------------------------------------+
+; RX_STATE_START ; 00    ; Unsigned Binary                                                    ;
+; RX_STATE_DATA  ; 01    ; Unsigned Binary                                                    ;
+; RX_STATE_STOP  ; 10    ; Unsigned Binary                                                    ;
++----------------+-------+--------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: memory_unit:mu1|ins_ram:M_INS|altsyncram:ram_rtl_0 ;
++------------------------------------+----------------------+-----------------------------------------+
+; Parameter Name                     ; Value                ; Type                                    ;
++------------------------------------+----------------------+-----------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                 ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                              ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                            ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                            ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                          ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                 ;
+; OPERATION_MODE                     ; BIDIR_DUAL_PORT      ; Untyped                                 ;
+; WIDTH_A                            ; 8                    ; Untyped                                 ;
+; WIDTHAD_A                          ; 8                    ; Untyped                                 ;
+; NUMWORDS_A                         ; 256                  ; Untyped                                 ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                 ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                 ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                 ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                 ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                 ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                 ;
+; WIDTH_B                            ; 8                    ; Untyped                                 ;
+; WIDTHAD_B                          ; 8                    ; Untyped                                 ;
+; NUMWORDS_B                         ; 256                  ; Untyped                                 ;
+; INDATA_REG_B                       ; CLOCK0               ; Untyped                                 ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK0               ; Untyped                                 ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                 ;
+; ADDRESS_REG_B                      ; CLOCK0               ; Untyped                                 ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                 ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                 ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                 ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                 ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                 ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                 ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                 ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                 ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                                 ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                 ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                 ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                 ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA             ; Untyped                                 ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                 ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                 ;
+; INIT_FILE                          ; UNUSED               ; Untyped                                 ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                 ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                 ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                                 ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                 ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                                 ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                 ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                 ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                 ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                 ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                 ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                 ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                                 ;
+; CBXI_PARAMETER                     ; altsyncram_veq1      ; Untyped                                 ;
++------------------------------------+----------------------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: memory_unit:mu1|img_in_ddr:MI_IMG|altsyncram:ram_rtl_0 ;
++------------------------------------+----------------------+---------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                        ;
++------------------------------------+----------------------+---------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                     ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                  ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                              ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                     ;
+; OPERATION_MODE                     ; BIDIR_DUAL_PORT      ; Untyped                                     ;
+; WIDTH_A                            ; 8                    ; Untyped                                     ;
+; WIDTHAD_A                          ; 19                   ; Untyped                                     ;
+; NUMWORDS_A                         ; 263169               ; Untyped                                     ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                     ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                     ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                     ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                     ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                     ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                     ;
+; WIDTH_B                            ; 8                    ; Untyped                                     ;
+; WIDTHAD_B                          ; 19                   ; Untyped                                     ;
+; NUMWORDS_B                         ; 263169               ; Untyped                                     ;
+; INDATA_REG_B                       ; CLOCK0               ; Untyped                                     ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK0               ; Untyped                                     ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                     ;
+; ADDRESS_REG_B                      ; CLOCK0               ; Untyped                                     ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                     ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                     ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                     ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                     ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                     ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                     ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                     ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                     ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                                     ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                     ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                     ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                     ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA             ; Untyped                                     ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                     ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                     ;
+; INIT_FILE                          ; UNUSED               ; Untyped                                     ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                     ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                     ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                                     ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                     ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                                     ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                     ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                     ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                     ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                     ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                     ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                     ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                                     ;
+; CBXI_PARAMETER                     ; altsyncram_sgr1      ; Untyped                                     ;
++------------------------------------+----------------------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                   ;
++-------------------------------------------+--------------------------------------------------------+
+; Name                                      ; Value                                                  ;
++-------------------------------------------+--------------------------------------------------------+
+; Number of entity instances                ; 2                                                      ;
+; Entity Instance                           ; memory_unit:mu1|ins_ram:M_INS|altsyncram:ram_rtl_0     ;
+;     -- OPERATION_MODE                     ; BIDIR_DUAL_PORT                                        ;
+;     -- WIDTH_A                            ; 8                                                      ;
+;     -- NUMWORDS_A                         ; 256                                                    ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                           ;
+;     -- WIDTH_B                            ; 8                                                      ;
+;     -- NUMWORDS_B                         ; 256                                                    ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                                 ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                           ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                   ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                                               ;
+; Entity Instance                           ; memory_unit:mu1|img_in_ddr:MI_IMG|altsyncram:ram_rtl_0 ;
+;     -- OPERATION_MODE                     ; BIDIR_DUAL_PORT                                        ;
+;     -- WIDTH_A                            ; 8                                                      ;
+;     -- NUMWORDS_A                         ; 263169                                                 ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                           ;
+;     -- WIDTH_B                            ; 8                                                      ;
+;     -- NUMWORDS_B                         ; 263169                                                 ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                                 ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                           ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                   ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                                               ;
++-------------------------------------------+--------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "memory_unit:mu1|CacheTop:CacheModule"                                                                                                                                                      ;
++---------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port          ; Type  ; Severity ; Details                                                                                                                                                                            ;
++---------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; ResetFlag     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; ResetFlag[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++---------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:45     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+    Info: Processing started: Sun Jul 30 10:47:17 2017
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off processor -c processor
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 1 design units, including 1 entities, in source file tagram.v
+    Info (12023): Found entity 1: TagRam
+Info (12021): Found 1 design units, including 1 entities, in source file validcache.v
+    Info (12023): Found entity 1: Validcache
+Info (12021): Found 1 design units, including 1 entities, in source file compare.v
+    Info (12023): Found entity 1: Compare
+Info (12021): Found 1 design units, including 1 entities, in source file cachedataram.v
+    Info (12023): Found entity 1: CacheDataRam
+Info (12021): Found 1 design units, including 1 entities, in source file doutmux.v
+    Info (12023): Found entity 1: DoutMux
+Info (12021): Found 1 design units, including 1 entities, in source file cacheaddressmux.v
+    Info (12023): Found entity 1: CacheAddressMux
+Info (12021): Found 1 design units, including 1 entities, in source file fsmcontrol.v
+    Info (12023): Found entity 1: FSMControl
+Info (12021): Found 1 design units, including 1 entities, in source file uart.v
+    Info (12023): Found entity 1: uart
+Info (12021): Found 1 design units, including 1 entities, in source file transmitter.v
+    Info (12023): Found entity 1: transmitter
+Info (12021): Found 1 design units, including 1 entities, in source file receiver.v
+    Info (12023): Found entity 1: receiver
+Info (12021): Found 1 design units, including 1 entities, in source file baud_rate_gen.v
+    Info (12023): Found entity 1: baud_rate_gen
+Info (12021): Found 1 design units, including 1 entities, in source file uart_fsm.v
+    Info (12023): Found entity 1: UART_FSM
+Info (12021): Found 1 design units, including 1 entities, in source file single_port_ram.v
+    Info (12023): Found entity 1: single_port_ram
+Info (12021): Found 2 design units, including 2 entities, in source file register8.v
+    Info (12023): Found entity 1: registerIR
+    Info (12023): Found entity 2: registerPC
+Info (12021): Found 1 design units, including 1 entities, in source file control_unit.v
+    Info (12023): Found entity 1: control_unit
+Info (12021): Found 2 design units, including 2 entities, in source file register19.v
+    Info (12023): Found entity 1: register19
+    Info (12023): Found entity 2: registerAC
+Info (12021): Found 1 design units, including 1 entities, in source file register12.v
+    Info (12023): Found entity 1: register12
+Info (12021): Found 1 design units, including 1 entities, in source file datapath.v
+    Info (12023): Found entity 1: datapath
+Info (12021): Found 1 design units, including 1 entities, in source file bmux.v
+    Info (12023): Found entity 1: Bmux
+Info (12021): Found 1 design units, including 1 entities, in source file amux.v
+    Info (12023): Found entity 1: Amux
+Info (12021): Found 1 design units, including 1 entities, in source file alu.v
+    Info (12023): Found entity 1: ALU
+Info (12021): Found 1 design units, including 1 entities, in source file processor.v
+    Info (12023): Found entity 1: processor
+Info (12021): Found 1 design units, including 1 entities, in source file memory_unit.v
+    Info (12023): Found entity 1: memory_unit
+Info (12021): Found 2 design units, including 2 entities, in source file ins_ram.v
+    Info (12023): Found entity 1: ins_ram
+    Info (12023): Found entity 2: ins_ram_tb
+Info (12021): Found 1 design units, including 1 entities, in source file img_out_ram.v
+    Info (12023): Found entity 1: img_out_ram
+Info (12021): Found 1 design units, including 1 entities, in source file true_dual_port_ram.v
+    Info (12023): Found entity 1: true_dual_port_ram
+Info (12021): Found 1 design units, including 1 entities, in source file top_mod.v
+    Info (12023): Found entity 1: top_mod
+Info (12021): Found 1 design units, including 1 entities, in source file output_files/processor_tb.v
+    Info (12023): Found entity 1: processor_tb
+Info (12021): Found 1 design units, including 1 entities, in source file img_in_ddr.v
+    Info (12023): Found entity 1: img_in_ddr
+Info (12021): Found 1 design units, including 1 entities, in source file cachetop.v
+    Info (12023): Found entity 1: CacheTop
+Warning (10222): Verilog HDL Parameter Declaration warning at UART_FSM.v(30): Parameter Declaration in module "UART_FSM" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List
+Warning (10222): Verilog HDL Parameter Declaration warning at UART_FSM.v(32): Parameter Declaration in module "UART_FSM" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List
+Warning (10222): Verilog HDL Parameter Declaration warning at UART_FSM.v(33): Parameter Declaration in module "UART_FSM" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List
+Warning (10222): Verilog HDL Parameter Declaration warning at UART_FSM.v(34): Parameter Declaration in module "UART_FSM" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List
+Warning (10222): Verilog HDL Parameter Declaration warning at UART_FSM.v(36): Parameter Declaration in module "UART_FSM" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List
+Warning (10222): Verilog HDL Parameter Declaration warning at UART_FSM.v(37): Parameter Declaration in module "UART_FSM" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List
+Warning (10222): Verilog HDL Parameter Declaration warning at UART_FSM.v(38): Parameter Declaration in module "UART_FSM" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List
+Warning (10222): Verilog HDL Parameter Declaration warning at UART_FSM.v(39): Parameter Declaration in module "UART_FSM" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List
+Warning (10222): Verilog HDL Parameter Declaration warning at UART_FSM.v(40): Parameter Declaration in module "UART_FSM" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List
+Warning (10222): Verilog HDL Parameter Declaration warning at UART_FSM.v(42): Parameter Declaration in module "UART_FSM" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List
+Warning (10222): Verilog HDL Parameter Declaration warning at UART_FSM.v(44): Parameter Declaration in module "UART_FSM" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List
+Warning (10222): Verilog HDL Parameter Declaration warning at UART_FSM.v(45): Parameter Declaration in module "UART_FSM" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List
+Warning (10222): Verilog HDL Parameter Declaration warning at UART_FSM.v(46): Parameter Declaration in module "UART_FSM" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List
+Warning (10222): Verilog HDL Parameter Declaration warning at UART_FSM.v(47): Parameter Declaration in module "UART_FSM" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List
+Warning (10222): Verilog HDL Parameter Declaration warning at UART_FSM.v(49): Parameter Declaration in module "UART_FSM" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List
+Warning (10222): Verilog HDL Parameter Declaration warning at UART_FSM.v(51): Parameter Declaration in module "UART_FSM" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List
+Warning (10222): Verilog HDL Parameter Declaration warning at UART_FSM.v(52): Parameter Declaration in module "UART_FSM" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List
+Warning (10222): Verilog HDL Parameter Declaration warning at UART_FSM.v(54): Parameter Declaration in module "UART_FSM" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List
+Warning (10222): Verilog HDL Parameter Declaration warning at UART_FSM.v(55): Parameter Declaration in module "UART_FSM" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List
+Warning (10222): Verilog HDL Parameter Declaration warning at UART_FSM.v(56): Parameter Declaration in module "UART_FSM" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List
+Warning (10222): Verilog HDL Parameter Declaration warning at UART_FSM.v(76): Parameter Declaration in module "UART_FSM" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List
+Warning (10222): Verilog HDL Parameter Declaration warning at UART_FSM.v(77): Parameter Declaration in module "UART_FSM" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List
+Warning (10222): Verilog HDL Parameter Declaration warning at UART_FSM.v(115): Parameter Declaration in module "UART_FSM" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List
+Warning (10222): Verilog HDL Parameter Declaration warning at UART_FSM.v(116): Parameter Declaration in module "UART_FSM" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List
+Warning (10222): Verilog HDL Parameter Declaration warning at UART_FSM.v(117): Parameter Declaration in module "UART_FSM" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List
+Warning (10222): Verilog HDL Parameter Declaration warning at UART_FSM.v(121): Parameter Declaration in module "UART_FSM" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List
+Warning (10222): Verilog HDL Parameter Declaration warning at UART_FSM.v(122): Parameter Declaration in module "UART_FSM" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List
+Warning (10222): Verilog HDL Parameter Declaration warning at UART_FSM.v(124): Parameter Declaration in module "UART_FSM" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List
+Warning (10222): Verilog HDL Parameter Declaration warning at UART_FSM.v(125): Parameter Declaration in module "UART_FSM" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List
+Warning (10222): Verilog HDL Parameter Declaration warning at UART_FSM.v(127): Parameter Declaration in module "UART_FSM" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List
+Warning (10222): Verilog HDL Parameter Declaration warning at UART_FSM.v(129): Parameter Declaration in module "UART_FSM" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List
+Warning (10222): Verilog HDL Parameter Declaration warning at UART_FSM.v(130): Parameter Declaration in module "UART_FSM" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List
+Info (12127): Elaborating entity "top_mod" for the top level hierarchy
+Info (12128): Elaborating entity "processor" for hierarchy "processor:cpu1"
+Info (12128): Elaborating entity "datapath" for hierarchy "processor:cpu1|datapath:DP1"
+Info (12128): Elaborating entity "register12" for hierarchy "processor:cpu1|datapath:DP1|register12:RS"
+Info (12128): Elaborating entity "register19" for hierarchy "processor:cpu1|datapath:DP1|register19:RK"
+Info (12128): Elaborating entity "registerAC" for hierarchy "processor:cpu1|datapath:DP1|registerAC:AC"
+Info (12128): Elaborating entity "ALU" for hierarchy "processor:cpu1|datapath:DP1|ALU:ALU"
+Info (12128): Elaborating entity "Amux" for hierarchy "processor:cpu1|datapath:DP1|Amux:AMUX"
+Info (12128): Elaborating entity "Bmux" for hierarchy "processor:cpu1|datapath:DP1|Bmux:bmuxtb"
+Info (12128): Elaborating entity "control_unit" for hierarchy "processor:cpu1|control_unit:CU1"
+Info (12128): Elaborating entity "registerIR" for hierarchy "processor:cpu1|control_unit:CU1|registerIR:IR"
+Info (12128): Elaborating entity "registerPC" for hierarchy "processor:cpu1|control_unit:CU1|registerPC:PC"
+Info (12128): Elaborating entity "memory_unit" for hierarchy "memory_unit:mu1"
+Info (12128): Elaborating entity "ins_ram" for hierarchy "memory_unit:mu1|ins_ram:M_INS"
+Info (12128): Elaborating entity "img_in_ddr" for hierarchy "memory_unit:mu1|img_in_ddr:MI_IMG"
+Warning (10235): Verilog HDL Always Construct warning at img_in_ddr.v(138): variable "prev_addr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Info (12128): Elaborating entity "CacheTop" for hierarchy "memory_unit:mu1|CacheTop:CacheModule"
+Info (12128): Elaborating entity "FSMControl" for hierarchy "memory_unit:mu1|CacheTop:CacheModule|FSMControl:FSMControl"
+Warning (10230): Verilog HDL assignment warning at FSMControl.v(39): truncated value with size 19 to match size of target (17)
+Warning (10230): Verilog HDL assignment warning at FSMControl.v(72): truncated value with size 32 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at FSMControl.v(133): truncated value with size 32 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at FSMControl.v(150): truncated value with size 32 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at FSMControl.v(166): truncated value with size 32 to match size of target (2)
+Info (12128): Elaborating entity "TagRam" for hierarchy "memory_unit:mu1|CacheTop:CacheModule|TagRam:TagRam"
+Info (12128): Elaborating entity "Validcache" for hierarchy "memory_unit:mu1|CacheTop:CacheModule|Validcache:Validcache"
+Info (12128): Elaborating entity "CacheDataRam" for hierarchy "memory_unit:mu1|CacheTop:CacheModule|CacheDataRam:CacheDataRam1"
+Info (12128): Elaborating entity "CacheAddressMux" for hierarchy "memory_unit:mu1|CacheTop:CacheModule|CacheAddressMux:CacheAddressMux"
+Info (12128): Elaborating entity "DoutMux" for hierarchy "memory_unit:mu1|CacheTop:CacheModule|DoutMux:DoutMux"
+Info (12128): Elaborating entity "Compare" for hierarchy "memory_unit:mu1|CacheTop:CacheModule|Compare:Compare"
+Info (12128): Elaborating entity "UART_FSM" for hierarchy "UART_FSM:uart_fsm1"
+Info (12128): Elaborating entity "uart" for hierarchy "UART_FSM:uart_fsm1|uart:uart1"
+Info (12128): Elaborating entity "baud_rate_gen" for hierarchy "UART_FSM:uart_fsm1|uart:uart1|baud_rate_gen:uart_baud"
+Info (12128): Elaborating entity "transmitter" for hierarchy "UART_FSM:uart_fsm1|uart:uart1|transmitter:uart_tx"
+Info (12128): Elaborating entity "receiver" for hierarchy "UART_FSM:uart_fsm1|uart:uart1|receiver:uart_rx"
+Info (19000): Inferred 2 megafunctions from design logic
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "memory_unit:mu1|ins_ram:M_INS|ram_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to BIDIR_DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 8
+        Info (286033): Parameter WIDTH_B set to 8
+        Info (286033): Parameter WIDTHAD_A set to 8
+        Info (286033): Parameter WIDTHAD_B set to 8
+        Info (286033): Parameter NUMWORDS_A set to 256
+        Info (286033): Parameter NUMWORDS_B set to 256
+        Info (286033): Parameter OUTDATA_REG_A set to UNREGISTERED
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_REG_B set to CLOCK0
+        Info (286033): Parameter WRCONTROL_WRADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter READ_DURING_WRITE_MODE_MIXED_PORTS set to OLD_DATA
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "memory_unit:mu1|img_in_ddr:MI_IMG|ram_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to BIDIR_DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 8
+        Info (286033): Parameter WIDTH_B set to 8
+        Info (286033): Parameter WIDTHAD_A set to 19
+        Info (286033): Parameter WIDTHAD_B set to 19
+        Info (286033): Parameter NUMWORDS_A set to 263169
+        Info (286033): Parameter NUMWORDS_B set to 263169
+        Info (286033): Parameter OUTDATA_REG_A set to UNREGISTERED
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_REG_B set to CLOCK0
+        Info (286033): Parameter WRCONTROL_WRADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter READ_DURING_WRITE_MODE_MIXED_PORTS set to OLD_DATA
+Info (12130): Elaborated megafunction instantiation "memory_unit:mu1|ins_ram:M_INS|altsyncram:ram_rtl_0"
+Info (12133): Instantiated megafunction "memory_unit:mu1|ins_ram:M_INS|altsyncram:ram_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "BIDIR_DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "8"
+    Info (12134): Parameter "WIDTH_B" = "8"
+    Info (12134): Parameter "WIDTHAD_A" = "8"
+    Info (12134): Parameter "WIDTHAD_B" = "8"
+    Info (12134): Parameter "NUMWORDS_A" = "256"
+    Info (12134): Parameter "NUMWORDS_B" = "256"
+    Info (12134): Parameter "OUTDATA_REG_A" = "UNREGISTERED"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK0"
+    Info (12134): Parameter "INDATA_REG_B" = "CLOCK0"
+    Info (12134): Parameter "WRCONTROL_WRADDRESS_REG_B" = "CLOCK0"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "OLD_DATA"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_veq1.tdf
+    Info (12023): Found entity 1: altsyncram_veq1
+Info (12130): Elaborated megafunction instantiation "memory_unit:mu1|img_in_ddr:MI_IMG|altsyncram:ram_rtl_0"
+Info (12133): Instantiated megafunction "memory_unit:mu1|img_in_ddr:MI_IMG|altsyncram:ram_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "BIDIR_DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "8"
+    Info (12134): Parameter "WIDTH_B" = "8"
+    Info (12134): Parameter "WIDTHAD_A" = "19"
+    Info (12134): Parameter "WIDTHAD_B" = "19"
+    Info (12134): Parameter "NUMWORDS_A" = "263169"
+    Info (12134): Parameter "NUMWORDS_B" = "263169"
+    Info (12134): Parameter "OUTDATA_REG_A" = "UNREGISTERED"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK0"
+    Info (12134): Parameter "INDATA_REG_B" = "CLOCK0"
+    Info (12134): Parameter "WRCONTROL_WRADDRESS_REG_B" = "CLOCK0"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "OLD_DATA"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_sgr1.tdf
+    Info (12023): Found entity 1: altsyncram_sgr1
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_cua.tdf
+    Info (12023): Found entity 1: decode_cua
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_sob.tdf
+    Info (12023): Found entity 1: mux_sob
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 17 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 21568 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
+    Info (21059): Implemented 3 output pins
+    Info (21061): Implemented 21290 logic cells
+    Info (21064): Implemented 272 RAM segments
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 40 warnings
+    Info: Peak virtual memory: 610 megabytes
+    Info: Processing ended: Sun Jul 30 10:48:08 2017
+    Info: Elapsed time: 00:00:51
+    Info: Total CPU time (on all processors): 00:00:50
+
+

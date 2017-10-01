@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="processor">
+		<CBX_INST_ENTRY INSTANCE_NAME="|top_mod|memory_unit:mu1|img_in_ddr:MI_IMG|altsyncram:ram_rtl_0" CBX_FILE_NAME="altsyncram_sgr1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|top_mod|memory_unit:mu1|ins_ram:M_INS|altsyncram:ram_rtl_0" CBX_FILE_NAME="altsyncram_veq1.tdf"/>
+	</PROJECT>
+</LOG_ROOT>
